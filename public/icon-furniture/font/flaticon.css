@@ -1,0 +1,135 @@
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff2") format("woff2"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+.fimanager:before {
+      display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    display: block;
+}
+
+.flaticon-001-bathtub:before { content: "\f100"; }
+.flaticon-002-soap:before { content: "\f101"; }
+.flaticon-003-single-bed:before { content: "\f102"; }
+.flaticon-004-single-bed:before { content: "\f103"; }
+.flaticon-005-double-bed:before { content: "\f104"; }
+.flaticon-006-double-bed:before { content: "\f105"; }
+.flaticon-007-bookshelf:before { content: "\f106"; }
+.flaticon-008-bookshelf:before { content: "\f107"; }
+.flaticon-009-bunk-bed:before { content: "\f108"; }
+.flaticon-010-wardrobe:before { content: "\f109"; }
+.flaticon-011-bathroom:before { content: "\f10a"; }
+.flaticon-012-bathroom:before { content: "\f10b"; }
+.flaticon-013-ceiling:before { content: "\f10c"; }
+.flaticon-014-chair:before { content: "\f10d"; }
+.flaticon-015-single-bed:before { content: "\f10e"; }
+.flaticon-016-couch:before { content: "\f10f"; }
+.flaticon-017-modern-chair:before { content: "\f110"; }
+.flaticon-018-ceiling-lamp:before { content: "\f111"; }
+.flaticon-019-design:before { content: "\f112"; }
+.flaticon-020-desk:before { content: "\f113"; }
+.flaticon-021-sofa-bed:before { content: "\f114"; }
+.flaticon-022-dining-table:before { content: "\f115"; }
+.flaticon-023-double-bed:before { content: "\f116"; }
+.flaticon-024-wardrobe:before { content: "\f117"; }
+.flaticon-025-double:before { content: "\f118"; }
+.flaticon-026-cabinet:before { content: "\f119"; }
+.flaticon-027-dressing-table:before { content: "\f11a"; }
+.flaticon-028-dressing-table:before { content: "\f11b"; }
+.flaticon-029-chair:before { content: "\f11c"; }
+.flaticon-030-lamp:before { content: "\f11d"; }
+.flaticon-031-stool:before { content: "\f11e"; }
+.flaticon-032-stool:before { content: "\f11f"; }
+.flaticon-033-kitchen:before { content: "\f120"; }
+.flaticon-034-kitchen:before { content: "\f121"; }
+.flaticon-035-kitchen:before { content: "\f122"; }
+.flaticon-036-kitchen:before { content: "\f123"; }
+.flaticon-037-lamp:before { content: "\f124"; }
+.flaticon-038-lamp:before { content: "\f125"; }
+.flaticon-039-sofa:before { content: "\f126"; }
+.flaticon-040-locker:before { content: "\f127"; }
+.flaticon-041-mirror:before { content: "\f128"; }
+.flaticon-042-stool:before { content: "\f129"; }
+.flaticon-043-chair:before { content: "\f12a"; }
+.flaticon-044-minimal:before { content: "\f12b"; }
+.flaticon-045-office-chair:before { content: "\f12c"; }
+.flaticon-046-office-chair:before { content: "\f12d"; }
+.flaticon-047-office-chair:before { content: "\f12e"; }
+.flaticon-048-bench:before { content: "\f12f"; }
+.flaticon-049-ceiling-lamp:before { content: "\f130"; }
+.flaticon-050-desk:before { content: "\f131"; }
+.flaticon-051-rocking-chair:before { content: "\f132"; }
+.flaticon-052-modern-chair:before { content: "\f133"; }
+.flaticon-053-cabinet:before { content: "\f134"; }
+.flaticon-054-shoe-rack:before { content: "\f135"; }
+.flaticon-055-bedside-table:before { content: "\f136"; }
+.flaticon-056-bedside-table:before { content: "\f137"; }
+.flaticon-057-bedside-table:before { content: "\f138"; }
+.flaticon-058-single-bed:before { content: "\f139"; }
+.flaticon-059-sink:before { content: "\f13a"; }
+.flaticon-060-chair:before { content: "\f13b"; }
+.flaticon-061-chair:before { content: "\f13c"; }
+.flaticon-062-wardrobe:before { content: "\f13d"; }
+.flaticon-063-side-table:before { content: "\f13e"; }
+.flaticon-064-sofa:before { content: "\f13f"; }
+.flaticon-065-armchair:before { content: "\f140"; }
+.flaticon-066-armchair:before { content: "\f141"; }
+.flaticon-067-armchair:before { content: "\f142"; }
+.flaticon-068-armchair:before { content: "\f143"; }
+.flaticon-069-sofa:before { content: "\f144"; }
+.flaticon-070-fan:before { content: "\f145"; }
+.flaticon-071-stool:before { content: "\f146"; }
+.flaticon-072-wardrobe:before { content: "\f147"; }
+.flaticon-073-table:before { content: "\f148"; }
+.flaticon-074-table:before { content: "\f149"; }
+.flaticon-075-armchair:before { content: "\f14a"; }
+.flaticon-076-desk:before { content: "\f14b"; }
+.flaticon-077-desk:before { content: "\f14c"; }
+.flaticon-078-desk:before { content: "\f14d"; }
+.flaticon-079-desk:before { content: "\f14e"; }
+.flaticon-080-modern-chair:before { content: "\f14f"; }
+.flaticon-081-table-lamp:before { content: "\f150"; }
+.flaticon-082-tea-table:before { content: "\f151"; }
+.flaticon-083-tea-table:before { content: "\f152"; }
+.flaticon-084-tea-table:before { content: "\f153"; }
+.flaticon-085-tea-table:before { content: "\f154"; }
+.flaticon-086-sofa:before { content: "\f155"; }
+.flaticon-087-cabinet:before { content: "\f156"; }
+.flaticon-088-cabinet:before { content: "\f157"; }
+.flaticon-089-couch:before { content: "\f158"; }
+.flaticon-090-chair:before { content: "\f159"; }
+.flaticon-091-shelf:before { content: "\f15a"; }
+.flaticon-092-shelf:before { content: "\f15b"; }
+.flaticon-093-wardrobe:before { content: "\f15c"; }
+.flaticon-094-wardrobe:before { content: "\f15d"; }
+.flaticon-095-wardrobe:before { content: "\f15e"; }
+.flaticon-096-wardrobe:before { content: "\f15f"; }
+.flaticon-097-wardrobe:before { content: "\f160"; }
+.flaticon-098-window:before { content: "\f161"; }
+.flaticon-099-curtains:before { content: "\f162"; }
+.flaticon-100-desk:before { content: "\f163"; }

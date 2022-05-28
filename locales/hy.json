@@ -1,0 +1,129 @@
+{
+	"menu": {
+		"home": "Գլխավոր",
+		"shop": "Խանութ",
+		"about": "Մեր մասին",
+		"contact": "Կապ"
+	},
+	"hits": "Լավագույն վաճառք",
+	"sales": {
+		"sale": "Վաճառք",
+		"howWork": "Ինչպես Ենք Մենք Աշխատում"
+	},
+	"advantage": "Մեր առավելությունները",
+	"contacts": {
+		"find": "Փնտրում եք մասնագիտական մոտեցում եւ որակյալ ծառայություններ .",
+		"come": "Եկեք մեզ մոտ"
+	},
+	"section": {
+		"1": "Ստացեք հաջողություն մեզ հետ!",
+		"2": "Կատարեք ճիշտ բաներ",
+		"3": "Ճիշտ ժամանակին."
+	},
+	"buttons": {
+		"viewAll": "Դիտել բոլորը",
+		"contactUs": "Կապ մեզ հետ"
+	},
+	"links": {
+		"about": "Մեր մասին",
+		"allCategory": "Բոլոր կատեգորիաները",
+		"changePassword": "Փոխել գաղտնաբառը",
+		"contact": "Կապ",
+		"favorite": "Իմ նախընտրածները",
+		"home": "Գլխավոր",
+		"changePlacholder": "փոխել գաղտնաբառը",
+		"changePlacholderRepeat": "կրկնել փոխված գաղտնաբառը",
+		"login": "Մուտք",
+		"orders": "Պատվերների պատմություն",
+		"personal": "Անձնական Տվյալներ",
+		"register": "Գրանցվել",
+		"shop": "Խանութ",
+		"cart": "Գնումների զամբյուղ",
+		"logout": "Դուրս գալ"
+	},
+	"contactUs": {
+		"call": "Զանգահարել մեզ",
+		"visit": "Այցելեք մեզ",
+		"mail": "Մեր էլ. հասցեն",
+		"chat": "Online չատ",
+		"text_1": "Գրեք մեզ",
+		"text_2": "Մենք սպասում ենք ձեզ սիրով",
+		"input": {
+			"name": "Անուն",
+			"email": "Էլ. հասցե",
+			"subject": "Թեմա",
+			"message": "Նամակ",
+			"send": "Ուղարկել նամակը",
+			"theme": "contactUs.input.theme",
+			"phone": "հեռախոսի համար"
+		}
+	},
+	"info": {
+		"login": "Մուտք",
+		"register": "Գրանցվել",
+		"forgot": "փոխել գաղտնաբառը.",
+		"myInfo": " Իմ տվյալները",
+		"orders": "Պատվերների պատմություն",
+		"yourPassword": "Ձեր գաղտնաբառը",
+		"email": "Էլ. հասցե",
+		"password": "Գաղտնաբառ",
+		"confirm": "Գաղտնաբառի հաստատում",
+		"text": "Ես կարդացի և համաձայն եմ անձնական տվյալների անվտանգության և մշակման պայմանների հետ",
+		"basic": "Հիմնական տվյալներ",
+		"data": {
+			"client": "Նոր օգտատեր",
+			"register": "Գրանցվել",
+			"info": "Հաշիվ ստեղծելը կօգնի ձեզ ավելի արագ գնել: Կարող եք վերահսկել պատվերի կարգավիճակը, ինչպես նաև դիտել ավելի վաղ արված պատվերները: Դուք կկարողանաք կուտակել պարգևատրման միավորներ և ստանալ զեղչային կտրոններ: Եվ մենք մեր մշտական ​​հաճախորդներին առաջարկում ենք զեղջերի և անհատականացված ծառայությունների ճկուն համակարգ:",
+			"continue": "Շարունակել"
+		},
+		"yourPasswpord": "info.yourPasswpord",
+		"name": "info.name",
+		"surname": "info.surname",
+		"phone": "info.phone"
+	},
+	"condition": "Պայմաններ",
+	"shoping_cart": {
+		"howToPay": "Ինչպես եք ուզում վճարել",
+		"orderReg": "Պատվերի Ձևակերպում",
+		"onlinePayment": "Վճարում Իդրամով",
+		"onlinePayment_ameria": "Վճարում բանկային քարտով",
+		"cash": {
+			"cash": "Վճարումը տեղում",
+			"name": "Անուն*",
+			"surname": "Ազգանուն *",
+			"email": "էլ․ հասցե *",
+			"phone": "Հեռախոսահամար *",
+			"city": "Քաղաք *",
+			"address": "Հասցե, տուն *"
+		},
+		"credit_without_bank": {
+			"without": "Ապառիկ վաճառք փակովի տարբերակով",
+			"certificate": "Սեփականության վկայականի նկար",
+			"front_side": "Անձնագրի նկար (Դիմացի մաս)",
+			"back_side": "Անձնագրի նկար (Ետնամաս)",
+			"certificate ": "shoping_cart.credit_without_bank.certificate ",
+			"front_side ": "shoping_cart.credit_without_bank.front_side ",
+			"back_side ": "shoping_cart.credit_without_bank.back_side ",
+			"withoutbank": "shoping_cart.credit_without_bank.withoutbank",
+			"withOutBank": "shoping_cart.credit_without_bank.withOutBank",
+			"withBank": "shoping_cart.credit_without_bank.withBank"
+		},
+		"withBank": {
+			"withBank": "Ապառիկ վաճառք բանկով",
+			"conditions": "Ես կարդացի եւ համաձայն եմ վերը նշված պայմաններին"
+		}
+	},
+	"wishlist_empty": "Դուք չունեք նախընտրած ապրանքներ",
+	"basket_empty": "Զամբյուղը դատարկ է",
+	"detail": {
+		"buy_now": "Գնել հիմա",
+		"category": "Բաժին",
+		"share": "Կիսվել",
+		"features": "Նկարագրություն",
+		"size": "Չափս",
+		"weight": "Քաշը",
+		"material": "Նյութեր",
+		"color": "Գույներ",
+		"info": "Լրացուցիչ տեղեկություններ"
+	}
+}

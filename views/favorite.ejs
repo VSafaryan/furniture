@@ -1,0 +1,55 @@
+<%- include('layouts/header') %>
+
+
+<!--  MY FAVORITE START -->
+
+
+<div class="section-block-grey">
+    <div class="container">
+
+        <div class="favorite-info-box"> 
+            <h2><%= __('wishlist_empty') %></h2>
+        </div>
+
+        <div class="wishBar">
+            <div class="WB_righSide">
+                <a id="clearWish" onClick="window.location.reload();" class="trashIcon btn btn-danger" title="Remove All" href="#">
+                    <% if (locale === 'hy') { %>
+                        Հեռացնել բոլորը
+                    <% } %>
+                    <% if (locale === 'ru') { %>
+                            Убрать все
+                    <% } %>
+                    <% if (locale === 'en') { %>
+                            Remove All
+                    <% } %>
+
+                </a>
+                
+            </div>
+            <div id="wishList" class="row">
+                <!-- list of wished item -->
+            </div>
+        </div>
+
+
+
+        <!-- <div class="box-pagination">
+            <div class="">
+                <ul>
+                    <li> << </li>
+                    <li class="pagination-active">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>...</li>
+                    <li>>></li>
+                </ul>
+            </div>
+        </div> -->
+
+    </div>
+</div>
+
+<!--  MY FAVORITE END -->
+
+<%- include('layouts/footer') %>

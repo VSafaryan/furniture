@@ -1,0 +1,276 @@
+<!-- Footer START -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <!-- Column 1 Start -->
+            <div class="col-md-4 col-sm-6 col-12">
+                <h3>
+                    <% if(locale === 'en') {%>      
+                        Feed Back
+                    <%} %>
+
+                    <% if(locale === 'ru') {%>      
+                        связь
+                    <%} %>
+
+                    <% if(locale === 'hy') {%>      
+                        Կապ
+                    <%} %>
+                    </h3>
+                <div class="phone-footer mt-25">
+                    <% if(contact.length) {%>
+                        <ul>
+                            <li type="tel"> <i class="fa fa-phone"></i>
+                                <%= contact[0].phone %>
+                            </li>
+                            <li> <i class="icon-material-outline-email"></i>
+                                <%= contact[0].email %>
+                            </li>
+                        </ul>
+                        <%} %>
+
+                </div>
+            </div>
+            <!-- Column 1 End -->
+
+            <!-- Column 2 Start -->
+            <div class="col-md-4 col-sm-6 col-12">
+                <h3>
+                    <% if(locale === 'en') {%>      
+                        Opening times
+                    <%} %>
+
+                    <% if(locale === 'ru') {%>      
+                       рабочие часы
+                    <%} %>
+
+                    <% if(locale === 'hy') {%>      
+                        Աշխատանքային ժամեր
+                    <%} %>
+                </h3>
+                <ul class="footer-list">
+                    <% if(contact.length) {%>
+                        <li>
+                            <%= contact[0].workingHourse %>
+                        </li>
+                        <%} %>
+                            <!-- <li><a href="#">Market Research</a></li> -->
+                </ul>
+            </div>
+            <!-- Column 2 End -->
+
+            <!-- Column 3 Start -->
+            <div class="col-md-4 col-sm-6 col-12">
+                <h3>
+
+                    <% if(locale === 'en') {%>      
+                        Find us
+                    <%} %>
+
+                    <% if(locale === 'ru') {%>      
+                        Найди нас
+                    <%} %>
+
+                    <% if(locale === 'hy') {%>      
+                        Գտեք մեզ
+                    <%} %>
+                </h3>
+
+                <div class="footer-social-icons mt-25">
+                    <ul>
+                        <% if(contact.length) {%>
+                            <li><a href="http://<%= contact[0].facebook %>" target="_blank"><i
+                                        class="fa fa-facebook-square"></i></a></li>
+                            <li><a href="http://<%= contact[0].instagram %>" target="_blank"><i
+                                        class="fa fa-instagram"></i></a></li>
+                            <%} %>
+                                <li><a target="blank" href="https://www.youtube.com/channel/UCMiBAEJf7A_lFHtcQaDks1A/featured"><i class="fa-brands fa-youtube"></i></a></li>
+                                <!-- <li><a href="#"><i class="fa fa-skype"></i></a></li> -->
+                                <!-- <li><a href="#"><i class="fa fa-youtube"></i></a></li> -->
+                    </ul>
+                </div>
+
+            </div>
+            <!-- Column 3 End -->
+
+            <!-- Column 4 Start -->
+            <div class="col-md-2 col-sm-6 col-12">
+                <div class="footer-tags mt-25">
+                    <a href="/condition">
+                        <% if(locale === 'en') {%>      
+                            Terms
+                        <%} %>
+    
+                        <% if(locale === 'ru') {%>      
+                            Условия
+                        <%} %>
+    
+                        <% if(locale === 'hy') {%>      
+                            Պայմաններ
+                        <%} %>
+                        
+                    </a>
+                </div>
+            </div>
+            <!-- Column 4 End -->
+        </div>
+        <!-- Footer Bar Start -->
+        <div class="footer-bar">
+            <p>
+                <a href="http://armcoding.com/" target="_blank"><span class="primary-color"> ArmCoding</span>
+            </a> © <span class="footer-date" ></span>
+            <% if(locale === 'en') {%>      
+                All Rights Reserved.
+            <%} %>
+
+            <% if(locale === 'ru') {%>      
+                Все права защищены
+            <%} %>
+
+            <% if(locale === 'hy') {%>      
+                Բոլոր իրավունքները պաշտպանված են.
+            <%} %>
+               
+            </p>
+        </div>
+        <!-- Footer Bar End -->
+    </div>
+</footer>
+<!-- Footer END -->
+
+<!-- Scroll to top button Start -->
+<a href="#" class="scroll-to-top"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+<!-- Scroll to top button End -->
+
+
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script> -->
+
+
+<!-- script -->
+
+
+
+<script type="text/javascript" src="js/script.js"></script>
+
+<!-- Jquery -->
+<script src="js/jquery.min.js"></script>
+
+<!--Popper JS-->
+<script src="js/popper.min.js"></script>
+
+<!--Popper JS-->
+<script src="js/popper.min.js"></script>
+
+<!-- Bootstrap JS-->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- validate -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script> -->
+
+<!-- wishlist -->
+<script type="text/javascript" src="libs/js/jq.js"></script>
+<script type="text/javascript" src="libs/js/jquery_cookies.js"></script>
+<script type="text/javascript" src="libs/js/json2.js"></script>
+<script type="text/javascript" src="libs/js/underscore.js"></script>
+<script type="text/javascript" src="libs/js/backbone.js"></script>
+<script type="text/javascript" src="libs/js/jquery-wishlist.js"></script>
+
+
+
+<!-- Owl Carousel-->
+<script src="js/owl.carousel.js"></script>
+
+<!-- Navbar JS -->
+<script src="js/navigation.js"></script>
+<script src="js/navigation.fixed.js"></script>
+
+<!-- Wow JS -->
+<script src="js/wow.min.js"></script>
+
+<!-- Slick -->
+<script src="js/slick-plugin.js"></script>
+<script src="js/slick.js"></script>
+
+
+
+
+<!-- Countup -->
+<script src="js/jquery.counterup.min.js"></script>
+<script src="js/waypoints.min.js"></script>
+
+<!-- Tabs -->
+<script src="js/tabs.min.js"></script>
+
+<!-- Yotube Video Player -->
+<script src="js/jquery.mb.YTPlayer.min.js"></script>
+
+<!-- Swiper Slider -->
+<script src="js/swiper.min.js"></script>
+
+<!-- Isotop -->
+<script src="js/isotope.pkgd.min.js"></script>
+
+<!-- Switcher JS -->
+<script src="js/switcher.js"></script>
+
+<!-- Modernizr -->
+<script src="js/modernizr.js"></script>
+
+<!-- Google Map -->
+<script src="js/map.js"></script>
+
+<!-- Main JS -->
+
+<script src="js/jQuery.Brazzers-Carousel.js"></script>
+<script src="js/main.js"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        window.MYwishlist = $.Wishlist("wishlist");
+    });
+</script>
+
+<!-- lightshot -->
+
+<!-- <script defer src="../../public/lightshot/js/lightbox.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js" integrity="sha512-k2GFCTbp9rQU412BStrcD/rlwv1PYec9SNrkbQlo6RZCf75l6KcC3UwDY8H5n5hl4v77IDtIPwOk9Dqjs/mMBQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jStorage/0.4.12/jstorage.min.js"></script>
+
+<script src="cesta-feira.js"></script>
+<script type="application/javascript">
+    $(document).ready(function () {
+        $.CestaFeira({
+            debug: false,
+            onItemAdded: function (item) {
+                console.log(item);
+            },
+            onItemUpdated: function (item) {
+                console.log(item);
+            }
+        });
+    });
+</script>
+
+<script type="application/javascript" src="cart.js"></script>
+
+
+
+ <script>
+
+    $(document).ready(function() {
+    //   $(".item2").brazzersCarousel();
+    transitionEffect:'fading';
+    });
+
+  </script>  
+
+</body>
+
+</html>

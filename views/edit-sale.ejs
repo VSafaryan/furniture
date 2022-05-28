@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/admin/css/sb-admin.css">
+</head>
+
+<body>
+
+
+    <div class="container mt-5">
+        <form class="modal-content" action="/admin-sale/edit" method="POST">
+            <div class="modal-header">
+                <button type="button" onclick="window.location.href='/admin-sale'" class="close" data-dismiss="modal">&times;</button>
+                <!-- <h4 class="modal-title">Modal Header</h4> -->
+            </div>
+            <div class="modal-body">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#hy">HY</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#ru">RU</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#en">EN</a>
+                    </li>
+                </ul>
+                <div class="container mt-5">
+                    <!-- <label>Image</label>
+                    <input type="file" name="avatar" multiple> -->
+                    <div class="form-group">
+                        <label for="">Code</label>
+                        <input type="text" class="form-control" name="code" value="<%= sale.code %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="">գին</label>
+                        <input type="text" class="form-control" name="price" value="<%= sale.price %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="">զեղչված Գին - եթե ուզում եք հանել դատարկ թողեք</label>
+                        <input type="text" class="form-control" name="salePrice" value="<%= sale.salePrice %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Add Hit</label>
+                        <input type="checkbox" name="hit" value="1">
+                        <br>
+                        <label for="">Delete Hit</label>
+                        <input type="checkbox" name="hit" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Add New</label>
+                        <input type="checkbox" name="news" value="1">
+                        <br>
+                        <label for="">Delete New</label>
+                        <input type="checkbox" name="news" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="">առկա է</label>
+                        <input type="checkbox" name="available" value="0">
+                        <br>
+                        <label for="">առկա չէ</label>
+                        <input type="checkbox" name="available" value="1">
+                    </div>
+                    <div class="form-group">
+                        <div class="colors">
+                            <p><b>Select a colors</b></p>
+                            <% color.forEach(i => {%>
+                            <div class="all-prod-box-color" style="background: <%= i.color %>">
+                                <div class="d-flex">
+                                    <input type="checkbox" name="color" value="<%= i.color %>">
+                                </div>
+                            </div>
+                            <%}) %>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content">
+                    <!-- HY -->
+                    <div id="hy" class="container tab-pane active"><br>
+                        <div class="form-group">
+                            <label for="">Վերնագիր</label>
+                            <input type="text" class="form-control" name="titleHy" value="<%= sale.titleHy %>">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Տեղեկատվություն</label>
+                            <!-- <textarea name="infoHy" class="form-control"><%= sale.infoHy %></textarea> -->
+                            <textarea name="infoHy"  id="editor" ><%= sale.infoHy %></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Կատեգորիա</label>
+                            <select name="categoryHy" id="" class="form-control">
+                                <% category.forEach(i => {%>
+                                <option selected disabled hidden>փոխել կատեգորիան</option>
+                                <option value="<%= i.categoryHy %>"><%= i.categoryHy %></option>
+                                <%}) %>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Լրացուցիչ տեղեկություններ</label>
+                            <textarea name="more_infoHy" value="<%= sale.more_infoHy %>" class="form-control"><%= sale.more_infoHy %></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="">պատրաստման տվյալներ օրինակ՝(Պատվիրելու դեպքում պատրաստ կլինի 10 - 12 օրում)</label>
+                            <input type="text" class="form-control" name="readyHy" value="<%= sale.readyHy %>">
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <p><b>Նկարագրություն</b></p>
+                            <div class="form-group">
+                                <label for="">Չափ</label>
+                                <input type="text" class="form-control" name="sizeHy" value="<%= sale.sizeHy %>">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Քաշը</label>
+                                <input type="text" class="form-control" name="weightHy" value="<%= sale.weightHy %>">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Մատերիալ</label>
+                                <input type="text" class="form-control" name="materialHy"
+                                    value="<%= sale.materialHy %>">
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="form-group">
+                            <label for="">Զեղչ (%)</label>
+                            <input type="text" class="form-control" name="discountHy" value="<%= sale.discountHy %>">
+                        </div>
+                    </div>
+                    <!-- RU -->
+                    <div id="ru" class="container tab-pane fade"><br>
+                        <div class="form-group">
+                            <label for="">Заглавие</label>
+                            <input type="text" class="form-control" name="titleRu" value="<%= sale.titleRu %>">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Информация</label>
+                            <!-- <textarea name="infoRu" class="form-control"><%= sale.infoRu %></textarea> -->
+                            <textarea name="infoRu" id="editorRu">
+                                <%= sale.infoRu %>
+                            </textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Категория</label>
+                            <select name="categoryRu" id="" class="form-control"> 
+                                <% category.forEach(i => {%>
+                                 <option selected disabled hidden>փոխել կատեգորիան</option>
+                                <option value="<%= i.categoryRu %>"><%= i.categoryRu %></option>
+                                <%}) %>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Дополнительная информация</label>
+                            <textarea name="more_infoRu" value="<%= sale.more_infoRu %>" class="form-control"><%= sale.more_infoRu %></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="">պատրաստման տվյալներ օրինակ՝(При заказе будет готов через 10-12 дней)</label>
+                            <input type="text" class="form-control" name="readyRu" value="<%= sale.readyRu %>">
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <p><b>Особенности</b></p>
+                            <div class="form-group">
+                                <label for="">Размер</label>
+                                <input type="text" class="form-control" name="sizeRu" value="<%= sale.titleRu %>">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Вес</label>
+                                <input type="text" class="form-control" name="weightRu" value="<%= sale.weightRu %>">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Материал</label>
+                                <input type="text" class="form-control" name="materialRu"
+                                    value="<%= sale.materialRu %>">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <label for="">Скидка (%)</label>
+                            <input type="text" class="form-control" name="discountRu" value="<%= sale.discountRu %>">
+                        </div>
+                    </div>
+                    <!-- EN -->
+                    <div id="en" class="container tab-pane fade"><br>
+                        <div class="form-group">
+                            <label for="">Title</label>
+                            <input type="text" class="form-control" name="titleEn" value="<%= sale.titleEn %>">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Information</label>
+                            <!-- <textarea name="infoEn" class="form-control"><%= sale.infoEn %></textarea> -->
+                            <textarea name="infoEn" id="editorEn">
+                                <%= sale.infoEn %>
+                            </textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Category</label>
+                            <select name="categoryEn" id="" class="form-control">
+                                <% category.forEach(i => {%>
+                                <option selected disabled hidden>փոխել կատեգորիան</option>
+                                <option value="<%= i.categoryEn %>"><%= i.categoryEn %></option>
+                                <%}) %>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Additional information</label>
+                            <textarea name="more_infoEn" value="<%= sale.more_infoEn %>" class="form-control"><%= sale.more_infoEn %></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="">պատրաստման տվյալներ օրինակ՝(Will be ready in 10-12 days if ordered)</label>
+                            <input type="text" class="form-control" name="readyEn" value="<%= sale.readyEn %>">
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <p><b>Features</b></p>
+                            <div class="form-group">
+                                <label for="">Size</label>
+                                <input type="text" class="form-control" name="sizeEn" value="<%= sale.sizeEn %>">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Weight</label>
+                                <input type="text" class="form-control" name="weightEn" value="<%= sale.weightEn %>">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Material</label>
+                                <input type="text" class="form-control" name="materialEn"
+                                    value="<%= sale.materialEn %>">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <label for="">Discount (%)</label>
+                            <input type="text" class="form-control" name="discountEn" value="<%= sale.discountEn %>">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" name="id" value="<%= sale.id %>">
+                    <button type="submit" class="btn btn-primary">Edit</button>
+                    <a href="/admin-sale" class="btn btn-small">Close</a>
+                </div>
+        </form>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+        <!-- editor plugin -->
+<script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+
+        ClassicEditor
+        .create( document.querySelector( '#editorRu' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+
+
+        ClassicEditor
+        .create( document.querySelector( '#editorEn' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+
+</script>
+
+</body>
+
+</html>

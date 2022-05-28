@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <meta charset="UTF-8">
+    <base href="/">
+    <link rel="shortcut icon" href="img/logos/logo-shortcut.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+
+    <!-- Icomoon -->
+    <link rel="stylesheet" type="text/css" href="css/icomoon.css">
+
+    <!-- Slider -->
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/slider.css">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+
+    <!-- Color Switcher -->
+    <link rel="stylesheet" type="text/css" href="css/switcher.css">
+
+    <!--  img change -->
+    <link rel="stylesheet" type="text/css" href="css/jQuery.Brazzers-Carousel.css">
+
+    <!-- Owl Carousel  -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+
+    <!-- Navigation  -->
+    <link rel="stylesheet" href="css/navigation.css">
+
+    <!-- slick -->
+
+    <link rel="stylesheet" href="/css/slick.css">
+
+    <!-- jQuery -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- icons  -->
+    <link rel="stylesheet" type="text/css" href="icon/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="icon/css/icons.css">
+    <link rel="stylesheet" type="text/css" href="icon/css/style.css">
+
+    <!-- shoping-cart -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css" id="colors">
+
+    <link rel="stylesheet" type="text/css" href="icon-furniture/font/flaticon.css">
+
+
+
+    <!-- Fonts Google -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Preloader Start-->
+    <div id="preloader">
+        <div class="row loader">
+            <div class="loader-icon"></div>
+        </div>
+    </div>
+    <!-- Preloader End -->
+
+
+    <!-- Top-Bar START -->
+
+    <!-- Top-Bar END -->
+
+
+    <!-- Navbar START -->
+    <header>
+        <nav id="navigation4" class="container navigation">
+            <div class="nav-header">
+                <a class="nav-brand" href="/">
+                    <% if(logo.length) {%>
+                        <img src="uploads/<%= logo[0].avatar %>" class="main-logo" alt="logo" id="main_logo">
+                        <%} %>
+
+                </a>
+                <div class="nav-toggle"></div>
+            </div>
+            <div class="nav-menus-wrapper">
+                <ul class="nav-menu align-to-right">
+                    <li><a href="/">
+                            <%= __('menu.home') %>
+                        </a>
+                        <div class="megamenu-panel">
+                            <div class="megamenu-lists">
+
+                                <ul class="megamenu-list megamenu-list-bg list-col-40">
+                                    <h4>Faind your inspiration</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat.</p>
+                                </ul>
+
+
+                                <ul class="megamenu-list list-col-20" style="width: 60%;">
+                                    <li class="megamenu-list-title">
+                                        <%= __('links.allCategory') %>
+                                    </li>
+                                    <div class="row menu_items_navbar" style="padding: 0px 15px;">
+                                        <% if(locale==='hy' ) {%>
+                                            <% category.forEach(i=> {%>
+                                                <div class="col-3 mb-3">
+                                                    <li><a href="/all-category/1">
+                                                            <%= i.categoryHy %><strong></strong>
+                                                        </a></li>
+                                                </div>
+                                                <%}) %>
+                                                    <%} %>
+                                    </div>
+
+                                    <% if(locale==='ru' ) {%>
+                                        <% category.forEach(i=> {%>
+                                            <li><a href="/all-category/1">
+                                                    <%= i.categoryRu %><strong></strong>
+                                                </a></li>
+                                            <%}) %>
+                                                <%} %>
+
+
+                                                    <% if(locale==='en' ) {%>
+                                                        <% category.forEach(i=> {%>
+                                                            <li><a href="/all-category/1">
+                                                                    <%= i.categoryEn %><strong></strong>
+                                                                </a></li>
+                                                            <%}) %>
+                                                                <%} %>
+                                </ul>
+
+                                <!-- <ul class="megamenu-list list-col-20">
+                                    <li class="megamenu-list-title">Все категории</li>
+                                    <li><a href="home-7.html">Детская <strong> (128)</strong></a></li>
+                                    <li><a href="home-8.html">Прихожая <strong> (107)</strong></a></li>
+                                    <li><a href="home-9.html">Ванная <strong> (38)</strong></a></li>
+                                    <li><a href="home-7.html">Офис <strong> (49)</strong></a></li>
+                                    <li><a href="home-8.html">Сад и дача <strong> (1733)</strong></a></li>
+                                </ul>
+                                <ul class="megamenu-list list-col-20">
+                                    <li class="megamenu-list-title">Акция</li>
+                                    <li><a href="home-10.html">Детская <strong> (1733)</strong> <span
+                                                class="menu-tag">-20%</span></a></li>
+                                    <li><a href="home-11.html">кухонная мебель <strong>(77)</strong> <span
+                                                class="menu-tag">-15%</span></a></li>
+                                    <li><a href="home-12.html">Мягкая мебель <strong>(15)</strong> <span
+                                                class="menu-tag">-30%</span></a></li>
+                                </ul> -->
+
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="/all-category/1">
+                            <%= __('menu.shop') %>
+                        </a> </li>
+
+                    <li><a href="about">
+                            <%= __('menu.about') %>
+                        </a> </li>
+
+                    <li><a href="contact">
+                            <%= __('menu.contact') %>
+                        </a> </li>
+
+
+                    <div class="save">
+                        <div class="sale-icon">
+                            <a href="/shoping-cart" data-cesta-feira-items-count><i
+                                    class="icon-material-outline-add-shopping-cart "></i><span></span> </a>
+
+                        </div>
+
+                        <div class="sale-icon">
+                            <a href="/favorite"><i class="icon-line-awesome-heart"></i> </a>
+                            <span class="wishCounter">0</span>
+                        </div>
+
+                        <div class="sale-icon">
+                            <!-- <a href="#" class="log_reg"><i class="icon-feather-user"></i> </a> -->
+                            <button class="log_reg"><i class="icon-feather-user"></i></button>
+                        </div>
+
+                        <div class="sale-icon lang-box" onmouseover="openLang(this)" onmouseout="closeLang(this)">
+                            <a href="/hy"><span id="am-lang" class="por-lang chosen"
+                                    onclick="changeLang('am-lang', this)"></span></a>
+                            <a href="/en"><span id="en-lang" class="eng-lang"
+                                    onclick="changeLang('en-lang', this)"></span></a>
+                            <a href="/ru"><span id="ru-lang" class="esp-lang"
+                                    onclick="changeLang('ru-lang', this)"></span></a>
+                        </div>
+                    </div>
+                    <!-- <li><a href="/hy"> <img src="/img/am.png" class="flag"> </a></li>
+                    <li><a href="/ru"> <img src="/img/ru.png" class="flag"></a></li>
+                    <li><a href="/en"><img src="/img/usa.png" class="flag"></a></li> -->
+            </div>
+        </nav>
+        <div class="login-register">
+            <% if(!isAuth) {%>
+                <form class="before-register-box" action="/login" method="POST">
+
+                    <!-- <button class="close_b">X</button> -->
+                    <input type="email" name="email" placeholder="<%= __('info.email') %>">
+                    <input type="password" name="password" placeholder="<%= __('info.password') %>">
+                    <div class="forgot-reg">
+                        <a href="/change-password">
+                            <%= __('info.forgot') %>
+                        </a><br>
+                        <a href="/register">
+                            <%= __('info.register') %>
+                        </a>
+                    </div>
+                    <button class="submit-button" type="submit">
+                        <%= __('info.login') %>
+                    </button>
+                </form>
+                <%} else {%>
+                    <div class="after-register-box">
+                        <ul>
+                            <li><a href="/personal">
+                                    <%= __('links.personal') %>
+                                </a></li>
+                            <li><a href="/orders">
+                                    <%= __('links.orders') %>
+                                </a></li>
+                            <li><a href="/favorite">
+                                    <%= __('links.favorite') %>
+                                </a></li>
+                            <li><a href="/register/logout">
+                                    <%= __('links.logout') %>
+                                </a></li>
+                        </ul>
+                    </div>
+                    <%} %>
+        </div>
+    </header>
+    <!-- Navbar END -->
+
+    <div class="alert alert-success basket_alert text-center" role="alert">
+        Ապրաքնը զամբյուղում է
+    </div>
+    <div class="alert alert-success alert_basket text-center" role="alert">
+        Ապրաքնը նախընտրածների բաժնում է
+    </div>

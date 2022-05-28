@@ -1,0 +1,339 @@
+<%- include('layouts/header') %>
+
+<!-- Shop Single START -->
+<div class="section-block mt-70 mb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <!-- Product Images & Alternates -->
+                <div class="product-images">
+                    <!-- Begin Product Images Slider -->
+                    <div  class="main-img-slider">
+                        <% sale.avatar.forEach(i => { %>
+                            <figure>
+                                <a href="/uploads/<%= i %>" data-lightbox="image-1" data-title="pakovikahuyqmariya.am" data-size="1400x1400">
+                                    <img src="/uploads/<%= i %>" alt="img"/>
+                                </a>
+                            </figure>
+                        <% }) %>
+                    </div>
+                    <!-- End Product Images Slider -->
+                    <!-- Begin product thumb nav -->
+                    <ul class="thumb-nav">
+                        <% sale.avatar.forEach(i => { %>
+                            <li><a  href=""><img src="/uploads/<%= i %>" alt="product-thumb"/></a></li>
+                        <% }) %>
+                    </ul>
+                    <!-- End product thumb nav -->
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="single-product">
+
+                    <% if (locale === 'hy') { %>
+                        <h2><%= sale.titleHy %></h2>
+                    <% } %>
+                    <% if (locale === 'ru') { %>
+                        <h2><%= sale.titleRu %></h2>
+                    <% } %>
+                    <% if (locale === 'en') { %>
+                        <h2><%= sale.titleEn %></h2>
+                    <% } %>
+
+                
+                    <!-- Price Start -->
+                    <% if(sale.salePrice) { %>
+                        <div class="saleBox">
+                        <h6 style="color: darkgrey;"><del><%= sale.price %> &#1423</del></h6>
+                        <h4 style="color: brown;"><%= sale.salePrice %> &#1423</h4>
+                       </div>
+                        <% } else { %>
+                        <h4><%= sale.price %> &#1423</h4>
+                    <% } %>
+                    <!-- Price End -->
+
+
+                    <!-- available start -->
+               
+                    <br>
+                    <div class="single-product-available">
+                       
+                        <% if(sale.available) { %>
+                            <h5 class="notAvailable">
+                               
+                                <% if(locale === 'en') {%>      
+                                    Not available temporarily
+                                <%} %>
+            
+                                <% if(locale === 'ru') {%>      
+                                    временно недоступен
+                                <%} %>
+            
+                                <% if(locale === 'hy') {%>      
+                                    Ժամանակավորապես առկա չէ
+                                <%} %>
+                            </h5>
+                        <% } else { %>
+                            <h5 class="available"> 
+                                <% if(locale === 'en') {%>      
+                                    is available
+                                <%} %>
+            
+                                <% if(locale === 'ru') {%>      
+                                    доступен
+                                <%} %>
+            
+                                <% if(locale === 'hy') {%>      
+                                    առկա է
+                                <%} %>
+                            </h5>
+                        <% } %>
+                    </div>
+
+                    <!-- available  end -->
+
+                    <% if (locale === 'hy') { %>
+                        <div class="convertText"><%= sale.infoHy %></div>
+                        <div class="shadow-scroll-x">
+                            <div id="stringg" class="force-overflow"></div>
+                          </div>
+                    <% } %>
+                    <% if (locale === 'en') { %>
+                        <div class="convertText"><%= sale.infoEn %></div>
+                        <div class="scrollbar" id="style-1">
+                            <div id="stringg" class="force-overflow"></div>
+                          </div>
+                    <% } %>
+                    <% if (locale === 'ru') { %>
+                        <div class="convertText"><%= sale.infoRu %></div>
+                        <div class="scrollbar" id="style-1">
+                          <div id="stringg" class="force-overflow"></div>
+                        </div>
+                    <% } %>
+
+
+                    <!-- Quantity Form and Button Start -->
+
+
+                    <% if(locale === 'en') {%>      
+                        
+                    <form action="" data-cesta-feira-form>
+                        <div class="quantity mt-30">
+                            <input type="number" name="quantity" min="1" max="99" step="1" value="1"
+                                   data-cesta-feira-attribute>
+                        </div>
+                     
+                        <input id="product_id" type="hidden" name="id" value="<%= sale.id %>" data-cesta-feira-attribute="">
+                        <input type="hidden" name="title" value="<%= sale.titleEn %>" data-cesta-feira-attribute="">
+                        <% if(sale.salePrice) { %>
+                            <input type="hidden" name="price" value="<%= sale.salePrice %>"
+                                   data-cesta-feira-attribute="">
+                        <% } else { %>
+                            <input type="hidden" name="price" value="<%= sale.price %>" data-cesta-feira-attribute="">
+                        <% } %>
+
+                        <input type="hidden" name="avatar" value="<%= sale.avatar[0] %>" data-cesta-feira-attribute="">
+                        <input id="product_id" type="hidden" name="id" value="<%= sale.id %>" data-cesta-feira-item-id>
+                        <!-- <input type="submit" class="dark-pulse-button add-to-cart-button" value="Купить сейчас"/> -->
+                        <button type="submit"
+                                class="dark-pulse-button add-to-cart-button"><%= __('detail.buy_now') %>
+                        </button>
+                        <% if (locale === 'hy') { %>
+                            <p style="color: #aa3535;"><%= sale.readyHy %></p>
+                        <% } %>
+                        <% if (locale === 'ru') { %>
+                            <p style="color: #aa3535;"><%= sale.readyRu %></p>
+                        <% } %>
+                        <% if (locale === 'en') { %>
+                            <p style="color: #aa3535;"><%= sale.readyEn %></li>
+                        <% } %>
+                    </form>
+                    <%} %>
+
+                    <% if(locale === 'ru') {%>      
+                        
+                    <form action="" data-cesta-feira-form>
+                        <div class="quantity mt-30">
+                            <input type="number" name="quantity" min="1" max="99" step="1" value="1"
+                                   data-cesta-feira-attribute>
+                        </div>
+                     
+                        <input id="product_id" type="hidden" name="id" value="<%= sale.id %>" data-cesta-feira-attribute="">
+                        <input type="hidden" name="title" value="<%= sale.titleRu %>" data-cesta-feira-attribute="">
+                        <% if(sale.salePrice) { %>
+                            <input type="hidden" name="price" value="<%= sale.salePrice %>"
+                                   data-cesta-feira-attribute="">
+                        <% } else { %>
+                            <input type="hidden" name="price" value="<%= sale.price %>" data-cesta-feira-attribute="">
+                        <% } %>
+
+                        <input type="hidden" name="avatar" value="<%= sale.avatar[0] %>" data-cesta-feira-attribute="">
+                        <input id="product_id" type="hidden" name="id" value="<%= sale.id %>" data-cesta-feira-item-id>
+                        <!-- <input type="submit" class="dark-pulse-button add-to-cart-button" value="Купить сейчас"/> -->
+                        <button type="submit"
+                                class="dark-pulse-button add-to-cart-button"><%= __('detail.buy_now') %>
+                        </button>
+                        <% if (locale === 'hy') { %>
+                            <p style="color: #aa3535;"><%= sale.readyHy %></p>
+                        <% } %>
+                        <% if (locale === 'ru') { %>
+                            <p style="color: #aa3535;"><%= sale.readyRu %></p>
+                        <% } %>
+                        <% if (locale === 'en') { %>
+                            <p style="color: #aa3535;"><%= sale.readyEn %></li>
+                        <% } %>
+                    </form>
+                    <%} %>
+
+                    <% if(locale === 'hy') {%>      
+                        
+                    <form action="" data-cesta-feira-form>
+                        <div class="quantity mt-30">
+                            <input type="number" name="quantity" min="1" max="99" step="1" value="1"
+                                   data-cesta-feira-attribute>
+                        </div>
+                     
+                        <input id="product_id" type="hidden" name="id" value="<%= sale.id %>" data-cesta-feira-attribute="">
+                        <input type="hidden" name="title" value="<%= sale.titleHy %>" data-cesta-feira-attribute="">
+                        <% if(sale.salePrice) { %>
+                            <input type="hidden" name="price" value="<%= sale.salePrice %>"
+                                   data-cesta-feira-attribute="">
+                        <% } else { %>
+                            <input type="hidden" name="price" value="<%= sale.price %>" data-cesta-feira-attribute="">
+                        <% } %>
+
+                        <input type="hidden" name="avatar" value="<%= sale.avatar[0] %>" data-cesta-feira-attribute="">
+                        <input id="product_id" type="hidden" name="id" value="<%= sale.id %>" data-cesta-feira-item-id>
+                        <!-- <input type="submit" class="dark-pulse-button add-to-cart-button" value="Купить сейчас"/> -->
+                        <button type="submit"
+                                class="dark-pulse-button add-to-cart-button"><%= __('detail.buy_now') %>
+                        </button>
+                        <% if (locale === 'hy') { %>
+                            <p style="color: #aa3535;"><%= sale.readyHy %></p>
+                        <% } %>
+                        <% if (locale === 'ru') { %>
+                            <p style="color: #aa3535;"><%= sale.readyRu %></p>
+                        <% } %>
+                        <% if (locale === 'en') { %>
+                            <p style="color: #aa3535;"><%= sale.readyEn %></li>
+                        <% } %>
+                    </form>
+                    <%} %>
+
+
+
+                    <!-- Quantity Form and Button End -->
+
+                    <div class="product-categories">
+                        <div class="display-b">
+                            <span><%= __('detail.category') %>: </span>
+                            <ul>
+                                <% if (locale === 'hy') { %>
+                                    <li><%= sale.categoryHy %></li>
+                                <% } %>
+                                <% if (locale === 'ru') { %>
+                                    <li><%= sale.categoryRu %></li>
+                                <% } %>
+                                <% if (locale === 'en') { %>
+                                    <li><%= sale.categoryEn %></li>
+                                <% } %>
+
+                            </ul>
+                        </div>
+                        <div class="display-b">
+                            <span>ID : </span>
+                            <ul>
+                                <li>AC <%= sale.code %></li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="product-share mt-20">
+                        <span><%= __('detail.share') %>: </span>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Part START -->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Tabs Start -->
+                <div class="shop-tabs">
+                    <div class='tabs tabs_animate mt-70'>
+                        <ul class="tab-menu left-holder">
+                            <li><a href="#tab-1"><%= __('detail.features') %> </a></li>
+                            <li><a href="#tab-2"><%= __('detail.info') %></a></li>
+                        </ul>
+
+                        <!-- Tab 2 Start -->
+                        <div id='tab-1' class="clearfix product-tab-body">
+                            <h3><%= __('detail.features') %> </h3>
+                            <ul>
+                                <% if (locale === 'hy') { %>
+                                    <li><span><%= __('detail.size') %>:</span><%= sale.sizeHy %></li>
+                                    <li><span><%= __('detail.weight') %>:</span><%= sale.weightHy %></li>
+                                    <li><span><%= __('detail.material') %>:</span><%= sale.materialHy %></li>
+                                    <li><span>Գույն</span> <% sale.color.forEach(l => {%>
+                                        <div class="all-prod-box-color" style="background: <%= l %>;"></div>
+                                        <%}) %>
+                                    </li>
+                                <% } %>
+                                <% if (locale === 'ru') { %>
+                                    <li><span><%= __('detail.size') %>:</span><%= sale.sizeRu %></li>
+                                    <li><span><%= __('detail.weight') %>:</span><%= sale.weightRu %></li>
+                                    <li><span><%= __('detail.material') %>:</span><%= sale.materialRu %></li>
+                                    <li><span>Цвет</span> <% sale.color.forEach(l => {%>
+                                        <div class="all-prod-box-color" style="background: <%= l %>;"></div>
+                                        <%}) %>
+                                    </li>
+                                
+                                <% } %>
+                                <% if (locale === 'en') { %>
+                                    <li><span><%= __('detail.size') %>:</span><%= sale.sizeEn %></li>
+                                    <li><span><%= __('detail.weight') %>:</span><%= sale.weightEn %></li>
+                                    <li><span><%= __('detail.material') %>:</span><%= sale.materialEn %></li>
+                                    <li><span>Color</span> <% sale.color.forEach(l => {%>
+                                        <div class="all-prod-box-color" style="background: <%= l %>;"></div>
+                                        <%}) %>
+                                    </li>
+                                <% } %>
+                            </ul>
+                        </div>
+                        <!-- Tab 2 End -->
+
+                        <!-- Tab 1 Start -->
+                        <div id='tab-2' class="clearfix product-tab-body">
+                            <h3><%= __('detail.info') %></h3>
+                            <% if (locale === 'hy') { %>
+                                <p><%= sale.more_infoHy %></p>
+                            <% } %>
+                            <% if (locale === 'ru') { %>
+                                <p><%= sale.more_infoRu %></p>
+                            <% } %>
+                            <% if (locale === 'en') { %>
+                                <p><%= sale.more_infoEn %></p>
+                            <% } %>
+
+                        </div>
+                        <!-- Tab 1 End -->
+                    </div>
+                </div>
+                <!-- Tabs End -->
+            </div>
+        </div>
+        <!-- Middle Part END -->
+    </div>
+</div>
+<!-- Shop Single END -->
+
+<%- include('layouts/footer') %>

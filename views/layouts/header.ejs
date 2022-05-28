@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <meta charset="UTF-8">
+    <base href="/">
+    <link rel="shortcut icon" href="img/logos/logo-shortcut.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+
+    <!-- Icomoon -->
+    <link rel="stylesheet" type="text/css" href="css/icomoon.css">
+
+    <!-- Slider -->
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/slider.css">
+
+    <!-- lightshot -->
+
+    <link rel="stylesheet" href="../../public/lightshot/css/lightbox.css">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Color Switcher -->
+    <link rel="stylesheet" type="text/css" href="css/switcher.css">
+
+    <!--  img change -->
+    <link rel="stylesheet" type="text/css" href="css/jQuery.Brazzers-Carousel.css">
+
+    <!-- Owl Carousel  -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+
+    <!-- Navigation  -->
+    <link rel="stylesheet" href="css/navigation.css">
+
+    <!-- slick -->
+
+    <link rel="stylesheet" href="/css/slick.css">
+
+    <!-- jQuery -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- icons  -->
+    <link rel="stylesheet" type="text/css" href="icon/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="icon/css/icons.css">
+    <link rel="stylesheet" type="text/css" href="icon/css/style.css">
+
+    <!-- shoping-cart -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css" id="colors">
+
+    <link rel="stylesheet" type="text/css" href="icon-furniture/font/flaticon.css">
+
+
+
+    <!-- Fonts Google -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <!-- lightbox -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.css" integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipuiaD5ymEo9520lyoVOo9jCQOCA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-228406647-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-228406647-1');
+</script>
+
+
+</head>
+
+
+<!-- oncontextmenu="return false" -->
+
+<body>
+
+    <!-- Preloader Start-->
+    <div id="preloader">
+        <div class="row loader">
+            <div class="loader-icon"></div>
+        </div>
+    </div>
+    <!-- Preloader End -->
+
+
+    <!-- Top-Bar START -->
+
+    <!-- Top-Bar END -->
+
+
+    <!-- Navbar START -->
+    <header>
+        <nav id="navigation4" class="container navigation">
+            <div class="nav-header">
+                <a class="nav-brand" href="/">
+                    <% if(logo.length) {%>
+                        <img style="width: 110px;" src="uploads/<%= logo[0].avatar %>" class="main-logo" alt="logo"
+                            id="main_logo">
+                        <%} %>
+
+                </a>
+                <div class="nav-toggle"></div>
+            </div>
+            <div class="nav-menus-wrapper">
+                <ul class="nav-menu align-to-right">
+                    <li><a href="/">
+                            <%= __('menu.home') %>
+                        </a>
+                        <div class="megamenu-panel">
+                            <div class="megamenu-lists">
+
+                                <ul class="megamenu-list megamenu-list-bg list-col-40">
+
+                                    <% if(locale==='en' ) {%>
+                                        <h4>MARIYA</h4>
+                                        <%} %>
+
+                                            <% if(locale==='ru' ) {%>
+                                                <h4>MARIYA</h4>
+                                                <%} %>
+
+                                                    <% if(locale==='hy' ) {%>
+                                                        <h4>փակովի կահույք մարիյա</h4>
+                                                        <%} %>
+
+                                                            <p>
+
+                                                                <% if(locale==='en' ) {%>
+                                                                    <h4 style="font-size: 15px;">Closed furniture Mariya offers furniture on time
+                                                                        payment without bank intervention. : памятка:
+                                                                        The contract is signed
+                                                                        furniture salon and between buyer . Call for
+                                                                        more information
+                                                                        </h4><br>
+                                                                        <h5 style="color: 	#fff;font-size: 16px;">Mobile: 099 77 54 66</h5>
+                                                                        <h5 style="color: 	#59267c;font-size: 16px;">Viber։ 094 80 58 10</h5>
+                                                                        <h5 style="color: green;font-size: 16px;">WhatsApp :095 77 54 66</h5>
+                                                                    <%} %>
+
+                                                                        <% if(locale==='ru' ) {%>
+                                                                            <h4 style="font-size: 15px;">Закрытая мебель Mariya предлагает мебель
+                                                                                в аренду
+                                                                                оплата без вмешательства банка. :
+                                                                                памятка: Договор подписан
+                                                                                мебельный салон и между покупателем.
+                                                                                Позвоните для получения дополнительной
+                                                                                информации
+                                                                                099 77 54 66 && 094 805810: Viber по
+                                                                                телефону +37495775466.</h4><br>
+                                                                                <h5 style="color: 	#fff;font-size: 16px;">Mobile: 099 77 54 66</h5>
+                                                                                <h5 style="color: 	#59267c;font-size: 16px;">Viber։ 094 80 58 10</h5>
+                                                                                <h5 style="color: green;font-size: 16px;">WhatsApp :095 77 54 66</h5>
+                                                                            <%} %>
+
+                                                                                <% if(locale==='hy' ) {%>
+                                                                                    <h4 style="font-size: 15px;"> Փակովի կահույք Մարիյան
+                                                                                        առաջարկում է կահույք տարաժամկետ
+                                                                                        վճարմամբ առանց բանկի
+                                                                                        միջամտությամբ:
+                                                                                        Պայմանագիրը կնքվում է
+                                                                                        կահույքի սրահի և գնորդի միջև:
+                                                                                        Մանրամասն տեղեկությունների համար
+                                                                                        զանգահարեք հետևյալ հեռախոսահամարներով ՝</h4><br>
+                                                                                        
+                                                                                        <h5 style="color: 	#fff;font-size: 16px;">Mobile: 099 77 54 66</h5>
+                                                                                        <h5 style="color: 	#59267c;font-size: 16px;">Viber։ 094 80 58 10</h5>
+                                                                                        <h5 style="color: green;font-size: 16px;">WhatsApp :095 77 54 66</h5>
+                                                                                        
+                                                                                    <%} %>
+
+                                                            </p>
+                                </ul>
+
+
+                                <ul class="megamenu-list list-col-20" style="width: 60%;">
+                                    <li class="megamenu-list-title">
+                                        <%= __('links.allCategory') %>
+                                    </li>
+                                    <div class="row menu_items_navbar" style="padding: 0px 15px;">
+                                        <% if(locale==='hy' ) {%>
+                                            <% category.forEach(i=> {%>
+                                                <div class="col-3 mb-3">
+                                                    <li><a href="/result-search/<%= i.categoryEn %>/1">
+                                                            <%= i.categoryHy %><strong></strong>
+                                                        </a></li>
+                                                </div>
+                                                <%}) %>
+                                                    <%} %>
+                                    </div>
+
+                                    <% if(locale==='ru' ) {%>
+                                        <% category.forEach(i=> {%>
+                                            <li><a href="/result-search/<%= i.categoryEn %>/1">
+                                                    <%= i.categoryRu %><strong></strong>
+                                                </a></li>
+                                            <%}) %>
+                                                <%} %>
+
+
+                                                    <% if(locale==='en' ) {%>
+                                                        <% category.forEach(i=> {%>
+                                                            <li><a href="/result-search/<%= i.categoryEn %>/1">
+                                                                    <%= i.categoryEn %><strong></strong>
+                                                                </a></li>
+                                                            <%}) %>
+                                                                <%} %>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="/all-category/1">
+                            <%= __('menu.shop') %>
+                        </a> </li>
+
+                    <li><a href="about">
+                            <%= __('menu.about') %>
+                        </a> </li>
+
+                    <li><a href="contact">
+                            <%= __('menu.contact') %>
+                        </a> </li>
+
+
+
+
+                    <div class="save">
+                        <div class="sale-icon">
+                            <a href="/shoping-cart" data-cesta-feira-items-count><i
+                                    class="icon-material-outline-add-shopping-cart "></i><span></span> </a>
+
+                        </div>
+
+                        <div class="sale-icon">
+                            <a href="/favorite"><i class="icon-line-awesome-heart"></i> </a>
+                            <span class="wishCounter"></span>
+                        </div>
+
+                        <div class="sale-icon">
+                            <!-- <a href="#" class="log_reg"><i class="icon-feather-user"></i> </a> -->
+                            <button class="log_reg"><i class="icon-feather-user"></i></button>
+                        </div>
+
+
+
+                        <div class="chooseLang">
+                            <div>
+                                <span id="am-lang" class="por-lang opened" onclick="changeLang('am-lang', this)"
+                                    title="Հայերեն"></span>
+                                <span id="en-lang" class="ing-lang opened" onclick="changeLang('en-lang', this)"
+                                    title="English"></span>
+                                <span id="ru-lang" class="esp-lang chosen opened" onclick="changeLang('ru-lang', this)"
+                                    title="Русский"></span>
+                            </div>
+                        </div>
+
+
+                        <!-- <div class="sale-icon lang-box" onmouseover="openLang(this)" onmouseout="closeLang(this)">
+                            <a href="/hy"><span id="am-lang" class="por-lang chosen"
+                                    onclick="changeLang('am-lang', this)"></span></a>
+                            <a href="/en"><span id="en-lang" class="eng-lang"
+                                    onclick="changeLang('en-lang', this)"></span></a>
+                            <a href="/ru"><span id="ru-lang" class="esp-lang"
+                                    onclick="changeLang('ru-lang', this)"></span></a>
+                        </div>  -->
+                    </div>
+
+
+                </ul>
+            </div>
+        </nav>
+        <div class="login-register">
+            <% if(!isAuth) {%>
+                <form class="before-register-box" action="/login" method="POST">
+
+                    <!-- <button class="close_b">X</button> -->
+                    <input type="email" name="email" placeholder="<%= __('info.email') %>">
+                    <input type="password" name="password" placeholder="<%= __('info.password') %>">
+                    <div class="forgot-reg">
+                        <!-- <a href="/change-password">
+                            <%= __('info.forgot') %>
+                        </a><br> -->
+                        <a href="/register">
+                            <%= __('info.register') %>
+                        </a>
+                    </div>
+                    <button class="submit-button" type="submit">
+                        <%= __('info.login') %>
+                    </button>
+                </form>
+                <%} else {%>
+                    <div class="after-register-box">
+                        <ul>
+                            <li><a href="/personal">
+                                    <%= __('links.personal') %>
+                                </a></li>
+                            <li><a href="/orders">
+                                    <%= __('links.orders') %>
+                                </a></li>
+                            <li><a href="/favorite">
+                                    <%= __('links.favorite') %>
+                                </a></li>
+                            <li><a href="/register/logout">
+                                    <%= __('links.logout') %>
+                                </a></li>
+                        </ul>
+                    </div>
+                    <%} %>
+        </div>
+
+    </header>
+    <!-- Navbar END -->
+
+    <div class="alert alert-success basket_alert text-center" role="alert">
+        Ապրաքնը զամբյուղում է
+    </div>
+    <div class="alert alert-success alert_basket text-center" role="alert">
+        Ապրաքնը նախընտրածների բաժնում է
+    </div>

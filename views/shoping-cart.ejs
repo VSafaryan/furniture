@@ -1,0 +1,424 @@
+<%- include('layouts/header') %>
+
+    <!-- Shopping Cart Section START -->
+    <div class="section-block">
+        <div class="container">
+
+            <div class="favorite-info-box-basket">
+                <h2>
+                    <%= __('basket_empty') %>
+                </h2>
+            </div>
+
+            <div class="row mt-70 mb-30 basket-box">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <div class="row" id="cart-items">
+                                
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="shop-cart-info-price clearfix">
+                            <ul class="right-info-price">
+                                <li>
+                                    <div id="total-value">
+                       
+                                    </div>
+                                    <div class="delivery_price"></div>
+                                </li>
+                                <!-- <li>Shipping Price: <h6>$85.00</h6></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Shopping Cart Section END -->
+
+
+    <!-- Accordions Section START -->
+    <div class="section-block mb-70 payment_box">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-12 mt-60">
+                    <div class="section-heading">
+                        <h5>
+                            <%= __('shoping_cart.howToPay') %>
+                        </h5>
+                        <div class="section-heading-line-left"></div>
+                    </div>
+                    <div class="panel-group mt-40" id="accordion2" role="tablist" aria-multiselectable="true">
+                        <!-- yield -->
+                    </div>
+
+
+                    <!--  կանխիկ վճարում start  -->
+
+                    <div class="panel panel-grey accordion">
+                        <div class="panel-heading accordion-heading" role="tab" id="acc4">
+                            <h4 class="panel-title accordion-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2"
+                                    href="#ac_col4" aria-expanded="false" aria-controls="ac_col4">
+                                    <%= __('shoping_cart.cash.cash') %>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="ac_col4" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="acc4">
+                            <div class="panel-body accordion-body">
+
+                                <div class="add-info-user-bank">
+
+                                    <div class="row">
+        <div class="col-lg-8 col-md-8 col-12 mb-30">
+   <form action="/shoping-cart/withbank" method="POST"
+               accept="image/x-png,image/gif,image/jpeg" enctype="multipart/form-data"
+              id="withBank">
+
+
+       <div class="buy-box-input add-info-user-bank-input mt-10">
+
+      <input type="text" name="name"
+          placeholder="<%= __('shoping_cart.cash.name') %>"
+             required="zxc">
+         <input type="text" name="surname"
+        placeholder="<%= __('shoping_cart.cash.surname') %>"
+         required="">
+            <input type="email" name="email"
+               placeholder="<%= __('shoping_cart.cash.email') %>" required="">
+              <input type="number" name="phone"
+            placeholder="<%= __('shoping_cart.cash.phone') %>" required="">
+
+          <input type="text" name="address"
+         placeholder="<%= __('shoping_cart.cash.address') %>"
+           required="">
+         </div>
+           
+                 <button class="submit-button-buy" type="submit"
+                id="withBankPayment">
+            <%= __('shoping_cart.orderReg') %>
+            </button>
+              
+    </form>
+          </div>
+       <div class="col-lg-4 col-md-4 col-12 mb-30"></div>
+          </div>
+
+           </div>
+         </div>
+      </div>
+              </div>
+
+
+                    <!--  կանխիկ վճարում end  -->
+
+
+
+                     <!--  օնլայն վճարում Իդրամ start -->
+
+                     <div class="panel panel-grey accordion">
+                        <div class="panel-heading accordion-heading" role="tab" id="acc2">
+                            <h4 class="panel-title accordion-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2"
+                                    href="#ac_col2" aria-expanded="false" aria-controls="ac_col2">
+                                    <%= __('shoping_cart.onlinePayment') %>
+                                </a>
+                            </h4>
+                        </div>
+
+
+                        <div id="ac_col2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="acc2">
+                            <div class="panel-body accordion-body">
+
+                                <div class="col-lg-8 col-md-8 col-12 mb-30">
+                                    <form
+                                    action="shoping-cart/withbank_idram_payment"
+                                    method="POST"
+                                    id="paymentIdram">
+
+                             
+                                    <div class="buy-box-input add-info-user-bank-input mt-10">
+
+                                        <input type="text" name="name"
+                                        placeholder="<%= __('shoping_cart.cash.name') %>"
+                                           required="zxc">
+                                       <input type="text" name="surname"
+                                      placeholder="<%= __('shoping_cart.cash.surname') %>"
+                                       required="">
+                                          <input type="email" name="email"
+                                             placeholder="<%= __('shoping_cart.cash.email') %>" required="">
+                                            <input type="number" name="phone"
+                                          placeholder="<%= __('shoping_cart.cash.phone') %>" required="">
+                              
+                                        <input type="text" name="address"
+                                       placeholder="<%= __('shoping_cart.cash.address') %>"
+                                         required="">
+                                           </div>
+                                
+                                <div class="buy-box-input add-info-user-bank-input mt-10">
+                                   
+                                                <div><img style="width:27%" src="img/bank/og-idram.png"></div>
+                                        <li><button  type="submit"><input
+                                           id="withBankIdram" type="button"  value="վճարել" style="cursor: pointer;"></button></li>
+                                </div>
+                                
+                            </form>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <!--  օնլայն վճարում Իդրամ end -->
+
+
+
+                    <!--  օնլայն վճարում ameria start -->
+
+                    <div class="panel panel-grey accordion">
+                        <div class="panel-heading accordion-heading" role="tab" id="acc5">
+                            <h4 class="panel-title accordion-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2"
+                                    href="#ac_col5" aria-expanded="false" aria-controls="ac_col5">
+                                    <%= __('shoping_cart.onlinePayment_ameria') %>
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="ac_col5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="acc2">
+                            <div class="panel-body accordion-body ameria_payment_acc">
+
+                                <div class="col-lg-12 col-md-12 col-12 mb-30">
+                            <form
+                                    action="shoping-cart/withbank_ameria_payment"
+                                    method="POST"
+                                    class="myForm"
+                                    id="paymentIdram">
+
+                             
+                                    <div class="buy-box-input add-info-user-bank-input mt-10">
+                                        <input type="text" name="name"
+                                        placeholder="<%= __('shoping_cart.cash.name') %>"
+                                           required="zxc">
+                                       <input type="text" name="surname"
+                                      placeholder="<%= __('shoping_cart.cash.surname') %>"
+                                       required="">
+                                          <input type="email" name="email"
+                                             placeholder="<%= __('shoping_cart.cash.email') %>" required="">
+                                            <input type="number" name="phone"
+                                          placeholder="<%= __('shoping_cart.cash.phone') %>" required="">
+                              
+                                        <input type="text" name="address"
+                                       placeholder="<%= __('shoping_cart.cash.address') %>"
+                                         required="">
+                                           </div>
+                                
+                                <div class="buy-box-input add-info-user-bank-input mt-10">
+                             
+                                            <div style="width: 30%;display: flex;">
+                                           <div style="width: 250px;display: flex;justify-content: center;align-items: center;"><img style="width:27%" src="img/bank/ame.jpg"></div>
+                                           <li style="width: 100%;"><button  type="submit"><input type="button"
+                                              id="withBankAmeria"  value="վճարել" style="cursor: pointer;"></button></li>
+
+                                            </div>
+
+                                </div>
+                                
+                            </form>
+                                </div>
+
+
+                                <div class="bank-name">
+
+                                    <ul>
+                                        <!-- <li><a href="#"><img src="img/bank/og-idram.png"></a></li>
+                                <li><a href="#"><img src="img/bank/viza1.png"></a></li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--  օնլայն վճարում ameria end -->
+
+
+                    <!--  ապառիկ վաճառք փակովի տարբերակով start  -->
+
+                    <div class="panel panel-grey accordion">
+                        <div class="panel-heading accordion-heading" role="tab" id="acc3">
+                            <h4 class="panel-title accordion-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2"
+                                    href="#ac_col3" aria-expanded="false" aria-controls="ac_col3">
+                                    <%= __('shoping_cart.credit_without_bank.without') %>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="ac_col3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="acc3">
+                            <div class="panel-body accordion-body">
+                                <h3>
+                                    <% if(locale === 'en') {%>      
+                                        Terms
+                                    <%} %>
+                
+                                    <% if(locale === 'ru') {%>      
+                                        Условия
+                                    <%} %>
+                
+                                    <% if(locale === 'hy') {%>      
+                                        Պայմաններ
+                                    <%} %>
+                                </h3>
+                                <br />
+                                <p>
+                                   
+                                    <% if(locale === 'en') {%>      
+                                        <%= conditionPay[0].conditionPayEn %>
+                                    <%} %>
+                
+                                    <% if(locale === 'ru') {%>      
+                                        <%= conditionPay[0].conditionPayRu %>
+                                    <%} %>
+                
+                                    <% if(locale === 'hy') {%>      
+                                        <%= conditionPay[0].conditionPayHy %>
+                                    <%} %>
+                                </p>
+                                <br />
+                               
+                                <form class="add-info-user" action="/shoping-cart/withoutbank" method="POST"
+                                    accept="image/x-png,image/gif,image/jpeg" enctype="multipart/form-data"
+                                    id="withoutbank">
+
+                                    <div class="buy-box-input add-info-user-bank-input mt-10">
+                                        <input type="number" name="phone"
+                                        placeholder="<%= __('shoping_cart.cash.phone') %>" required="">
+                                    </div>
+
+                                    <div class="add-user-img mt-10">
+                                        <h5><%= __('shoping_cart.credit_without_bank.certificate') %></h5>
+                                        <input type='file' required="" onchange="reads3RL(this);" name="avatar">
+                                        <img id="blah3" src="img/user-info/images.jpg" alt="img" />
+                                    </div>
+
+                                    <div class="add-license-img">
+                                        <h5><%= __('shoping_cart.credit_without_bank.front_side') %></h5>
+                                        <input type="file" required="" onchange="readsURL(this);" name="avatar">
+                                        <img id="blah" src="img/user-info/dr-license.png" alt="img">
+                                    </div>
+
+                                    <div class="add-license-img">
+                                        <h5><%= __('shoping_cart.credit_without_bank.back_side') %></h5>
+                                        <input type="file" required="" onchange="reads2URL(this);" name="avatar">
+                                        <img id="blah2" src="img/user-info/dr-license.png" alt="img">
+                                    </div>
+                                    <% if(!isAuth) {%>
+                                    <button class="submit-button-buy"
+                                        type="submit"><%= __('shoping_cart.orderReg') %></button>
+                                    <%} else {%>
+                                    <button class="submit-button-buy" type="submit"
+                                        id="withoutBankPayment"><%= __('shoping_cart.orderReg') %></button>
+                                    <%} %>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+
+                     <!--  ապառիկ վաճառք փակովի տարբերակով  end  -->
+
+
+
+
+
+                       <!--  ապառիկ վաճառք բանկով start  -->
+
+                       <div class="panel panel-grey accordion">
+                        <div class="panel-heading accordion-heading" role="tab" id="acc5">
+                            <h4 class="panel-title accordion-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2"
+                                    href="#ac_col6" aria-expanded="false" aria-controls="ac_col6">
+                                    <%= __('shoping_cart.withBank.withBank') %>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="ac_col6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="acc6">
+                            <div class="panel-body accordion-body">
+                                <h3>
+                                    <% if(locale === 'en') {%>      
+                                        Terms
+                                    <%} %>
+                
+                                    <% if(locale === 'ru') {%>      
+                                        Условия
+                                    <%} %>
+                
+                                    <% if(locale === 'hy') {%>      
+                                        Պայմաններ
+                                    <%} %>
+                                </h3>
+                                <br />
+                                <p>
+                                   
+                                    <% if(locale === 'en') {%>      
+                                        <%= conditionPay[0].conditionPayEn %>
+                                    <%} %>
+                
+                                    <% if(locale === 'ru') {%>      
+                                        <%= conditionPay[0].conditionPayRu %>
+                                    <%} %>
+                
+                                    <% if(locale === 'hy') {%>      
+                                        <%= conditionPay[0].conditionPayHy %>
+                                    <%} %>
+                                </p>
+                                <br />
+                               
+                                <form class="add-info-user" action="/shoping-cart/withoutbankcredit" method="POST"
+                                    accept="image/x-png,image/gif,image/jpeg" enctype="multipart/form-data"
+                                    id="withoutbankCredit">
+
+                                    <div class="buy-box-input add-info-user-bank-input mt-10">
+                                        <input type="number" name="phone"
+                                        placeholder="<%= __('shoping_cart.cash.phone') %>" required="">
+                                    </div>
+
+                                    <div class="add-user-img mt-10">
+                                        <h5><%= __('shoping_cart.credit_without_bank.certificate') %></h5>
+                                        <input type='file' required onchange="reads4RL(this);" name="avatar">
+                                        <img id="blah4" src="img/user-info/images.jpg" alt="img" />
+                                    </div>
+
+                                    <div class="add-license-img">
+                                        <h5><%= __('shoping_cart.credit_without_bank.front_side') %></h5>
+                                        <input type="file" required="" onchange="reads5RL(this);" name="avatar">
+                                        <img id="blah5" src="img/user-info/dr-license.png" alt="img">
+                                    </div>
+
+                                    <div class="add-license-img">
+                                        <h5><%= __('shoping_cart.credit_without_bank.back_side') %></h5>
+                                        <input type="file" required="" onchange="reads6RL(this);" name="avatar">
+                                        <img id="blah6" src="img/user-info/dr-license.png" alt="img">
+                                    </div>
+                                    <% if(!isAuth) {%>
+                                    <button class="submit-button-buy"
+                                        type="submit"><%= __('shoping_cart.orderReg') %></button>
+                                    <%} else {%>
+                                    <button class="submit-button-buy" type="submit"
+                                        id="withoutBankPayment"><%= __('shoping_cart.orderReg') %></button>
+                                    <%} %>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+
+                     <!--  ապառիկ վաճառք բանկով  end  -->
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Accordions Section END -->
+
+
+    <%- include('layouts/footer') %>
+

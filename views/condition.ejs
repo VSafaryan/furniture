@@ -1,0 +1,21 @@
+<%- include('layouts/header') %>
+
+<div class="container mt-5 mb-5">
+    <h3 class="mt-5 mb-5 text-center"><%= __('condition') %></h3>
+
+    <div class="form-group mt-5">
+        <% if(locale === 'hy') {%>
+        <p><%= condition[0].conditionHy %></p>
+        <%} %>
+
+        <% if(locale === 'ru') {%>
+        <p><%= condition[0].conditionRu %></p>
+        <%} %>
+
+        <% if(locale === 'en') {%>
+        <p><%= condition[0].conditionEn %></p>
+        <%} %>
+    </div>
+</div>
+
+<%- include('layouts/footer') %>

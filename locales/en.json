@@ -1,0 +1,118 @@
+{
+	"menu": {
+		"home": "Home",
+		"shop": "Shop",
+		"about": "About",
+		"contact": "Contact"
+	},
+	"hits": "TOP sale",
+	"sales": {
+		"sale": "Sale",
+		"howWork": "How We Work"
+	},
+	"advantage": "Our advantage",
+	"contacts": {
+		"find": "Looking for a professional approach and quality services ?",
+		"come": "Come to us"
+	},
+	"section": {
+		"1": "Get success with us!",
+		"2": "Do the right thing",
+		"3": "During necessary time."
+	},
+	"buttons": {
+		"viewAll": "View all",
+		"contactUs": "Contact us"
+	},
+	"links": {
+		"about": "About",
+		"allCategory": "All categories",
+		"changePassword": "Change password",
+		"contact": "Contact",
+		"favorite": "My favorite",
+		"home": "Home",
+		"login": "Login",
+		"orders": "Order history",
+		"changePlacholder":"change password",
+		"changePlacholderRepeat":"Repeat changed password",
+		"personal": "Personal account",
+		"register": "Sign up",
+		"shop": "Shop",
+		"cart": "Basket",
+		"logout": "Logout"
+	},
+	"contactUs": {
+		"call": "Call Us",
+		"visit": "Visit Us",
+		"mail": "Mail Us",
+		"chat": "Live Chat",
+		"text_1": "Write to us",
+		"text_2": "We are waiting for you with love",
+		"input": {
+			"name": "Name",
+			"email": "E-mail",
+			"subject": "Subject",
+			"message": "Message",
+			"send": "Send Message",
+			"phone": "phone number"
+		}
+	},
+	"info": {
+		"login": "Login",
+		"register": "Sign up",
+		"forgot": "edit your password",
+		"myInfo": " My details ",
+		"orders": "История заказов",
+		"yourPassword": "Order history",
+		"email": "Email",
+		"password": "Password",
+		"confirm": "Confirm password",
+		"text": "I have read and agree to the terms of security and processing of personal data",
+		"basic": "Basic data",
+		"data": {
+			"client": "New client",
+			"register": "Sign up",
+			"info": "Creating an account will help you buy faster. You will be able to monitor the order status, as well as view orders made earlier. You will be able to accumulate bonus points and receive discount coupons. We offer a flexible system of discounts and personal service to our regular customers.",
+			"continue": "Continue"
+		}
+	},
+	"condition": "Conditions",
+	"shoping_cart": {
+		"howToPay": "How do you want to pay ?",
+		"orderReg": "Order registration",
+		"onlinePayment": "Pay with Idram",
+		"onlinePayment_ameria": "Payment by bank card",
+		"cash": {
+			"cash": "Split in place",
+			"name": "Name *",
+			"surname": "Surname *",
+			"email": "Email *",
+			"phone": "Phone *",
+			"city": "City *",
+			"address": "Address *"
+		},
+		"credit_without_bank": {
+			"without": "Sale on credit without a Bank",
+			"certificate": "Photo of the certificate of ownership",
+			"front_side": "Passport photo front side",
+			"back_side": "Passport photo back side"
+		},
+		"withBank": {
+			"withBank": "Sale on credit through a Bank",
+			"conditions": "I have read and agree to the above terms and conditions"
+		}
+	},
+	"wishlist_empty": "You don't have any favorite products",
+	"basket_empty": "Basket is empty",
+	"detail": {
+		"buy_now": "Buy now",
+		"category": "Category",
+		"share": "Share",
+		"features": "Features",
+		"size": "Size",
+		"weight": "Weight",
+		"material": "Material",
+		"color": "Colors",
+		"info": "Additional information"
+	}
+}

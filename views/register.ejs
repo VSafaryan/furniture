@@ -1,0 +1,72 @@
+<%- include('layouts/header') %>
+
+
+<!-- Register-box START -->
+<div class="section-block-grey border-top">
+    <div class="container">
+        <div class="section-heading">
+            <h5><%= __('info.data.client') %></h5>
+            <div class="section-heading-line-left"></div>
+        </div>
+        <div class="row mt-40">
+            <div class="col-lg-8 col-md-7 col-12 mb-30">
+                <!-- <div class="register-box-head">
+                        <h5>Left BOX</h5>
+                    </div>-->
+                <% if(regError.length > 0) {%>
+                <p class="alert"><%= regError%></p>
+                <%} %>
+                <form method="POST" action="/register" novalidate>
+                    <div class="register-box-input">
+                        <!-- <h4>Name</h4>    -->
+                        <input type="text" name="name" placeholder="<%= __('shoping_cart.cash.name') %>" required="zxc">
+                        <input type="text" name="surname" placeholder="<%= __('shoping_cart.cash.surname') %>" required="">
+                        <input type="email" name="email" placeholder="<%= __('info.email') %>" required="">
+                        <input type="tel" name="phone" placeholder="<%= __('shoping_cart.cash.phone') %>" required="">
+
+                        <h4><%= __('info.yourPassword') %></h4>
+                        <input type="password" name="password" placeholder="<%= __('info.password') %>" required="">
+                        <input type="password" name="confirm" placeholder="<%= __('info.confirm') %>" required="">
+                    </div>
+
+                    <div class="register-agree">
+                        <a href="/condition" target="blank"> <h4><%= __('info.text') %></h4></a>
+                        <label class="type-name">
+                            <input type="checkbox" name="checkbox">
+                            <span class="checkmark-check"></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="register-button"><%= __('info.data.continue') %></button>
+                </form>
+            </div>
+
+            <div class="col-lg-4 col-md-5 col-12">
+                <div class="register-box-menu">
+                    <ul>
+                        <li><a href="/login"> <%= __('info.login') %> </a></li>
+                        <li class="register-box-menu-active"><a href="/register"> <%= __('info.register') %> </a></li>
+
+                        
+                        <% if(!isAuth) {%>
+                         
+                            <%} else {%>
+                                <li><a href="/change-password"> <%= __('info.forgot') %> </a></li>
+                                <li><a href="/personal"> <%= __('info.myInfo') %></a></li>
+                         
+                                <%} %>       
+                    
+                        <!-- <li><a href="/orders"> <%= __('info.orders') %> </a></li> -->
+                        <!-- <li><a href="#"> Возвраты </a></li>
+                        <li><a href="#"> Условия </a></li> -->
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+<!-- Register-box End -->
+
+
+<%- include('layouts/footer') %>

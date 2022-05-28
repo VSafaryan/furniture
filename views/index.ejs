@@ -1,0 +1,653 @@
+<%- include('layouts/header') %>
+
+<!-- Slider START -->
+<div class="swiper-main-slider-fade swiper-container">
+    <div class="swiper-wrapper">
+
+        <% slider.forEach(i => {%>
+        <!-- Slide  Start -->
+        <div class="swiper-slide" style="background-image:url('uploads/<%= i.avatar %>');">
+            <!-- <div class="medium-overlay"></div> -->
+            <div class="container">
+                <div class="slider-content left-holder">
+                    <h2 class="animated fadeInDown">
+                        <%= HeaderText[0].title %>
+                    </h2>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-12">
+                            <p class="animated fadeInDown">
+                                <%= HeaderText[0].description %>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- <div class="animated fadeInUp mt-30">
+            <a href="#contact" class="dark-button button-md">Контакт</a>
+          </div> -->
+                </div>
+            </div>
+        </div>
+        <!-- Slide  End -->
+        <%}) %>
+
+
+    </div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+</div>
+<!-- Slider END -->
+
+
+<!--categories Carousel START -->
+<div class="container-fluid" style="background: #f9f9f9; padding-bottom: 10px;">
+    <div class="container">
+        <div class="owl-carousel owl-theme categories" id="categories">
+            <% service.forEach(i => {%>
+            <% if(locale == 'hy') {%>
+            <div class="item clickStop">
+                <a href="/contact">
+                    <img src="uploads/<%= i.avatar %>" alt="">
+                    <h4><%= i.titleHy %></h4>
+                </a>
+            </div>
+            <%} %>
+            <% if(locale == 'ru') {%>
+            <div class="item clickStop">
+                <a href="/contact">
+                    <img src="uploads/<%= i.avatar %>" alt="">
+                    <h4><%= i.titleRu %></h4>
+                </a>
+            </div>
+            <%} %>
+            <% if(locale == 'en') {%>
+            <div class="item clickStop">
+                <a href="/contact">
+                    <img src="uploads/<%= i.avatar %>" alt="">
+                    <h4><%= i.titleEn %></h4>
+                </a>
+            </div>
+            <%} %>
+
+            <%}) %>
+        </div>
+    </div>
+</div>
+<!--categories Carousel END -->
+
+
+<!-- Хиты продаж START -->
+<div class="section-categories">
+    <div class="container">
+
+        <div class="section-heading center-holder">
+            <!-- <span>How We Work</span> -->
+            <h2><%= __('hits') %></h2>
+            <div class="section-heading-line"></div>
+
+        </div>
+
+        <div class="owl-carousel owl-theme" id="top-sale">
+            <!-- hit en -->
+            <% if(locale === 'en') {%>
+            <% hit.forEach(i => {%>
+            <div class="item">
+                <div class="prod-box">
+                    <a href="/shop-single/<%= i.id %>">
+                        <div class="item_img item-img-h">
+                            <% i.avatar.forEach(j => {%>
+                            <img src="/uploads/<%= j %>">
+                            <%}) %>
+                        </div>
+                    </a>
+                    <div class="prod-box-text">
+                        <h6> <span>ID :</span>AC <%= i.code %> </h6>
+                         <!-- available start -->
+                         <div class="single-product-available-single">
+                            <% if(i.available) { %>
+                            <h5 class="notAvailableHit">
+                                   
+                                <% if(locale === 'en') {%>      
+                                    Not available temporarily
+                                <%} %>
+            
+                                <% if(locale === 'ru') {%>      
+                                    временно недоступен
+                                <%} %>
+            
+                                <% if(locale === 'hy') {%>      
+                                    Ժամանակավորապես առկա չէ
+                                <%} %>
+                            </h5>
+                        <% } else { %>
+                            <h5 class="availableHit">
+                                  <% if(locale === 'en') {%>      
+                                    is available
+                                <%} %>
+            
+                                <% if(locale === 'ru') {%>      
+                                    доступен
+                                <%} %>
+            
+                                <% if(locale === 'hy') {%>      
+                                    առկա է
+                                <%} %>
+                                </h5>
+                        <% } %>
+                        </div>
+                        <!-- available  end -->
+                        <a href="/shop-single/<%= i.id %>">
+                            <h5><%= i.titleEn %> </h5>
+                        </a>
+                    </div>
+                    <div class="prod-box-button">
+                        <a href="/shop-single/<%= i.id %>">More detailed </a>
+                        <% if(i.salePrice) { %>
+                            <div class="saleBox">
+                            <h6><del><%= i.price %> &#1423</del></h6>
+                            <h4><%= i.salePrice %> &#1423</h4>
+                           </div>
+                            <% } else { %>
+                            <h4><%= i.price %> &#1423</h4>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <%}) %>
+            <%} %>
+
+            <!-- hit ru -->
+            <% if(locale === 'ru') {%>
+            <% hit.forEach(i => {%>
+            <div class="item">
+                <div class="prod-box">
+                    <a href="/shop-single/<%= i.id %>">
+                        <div class="item_img item-img-h">
+                            <% i.avatar.forEach(j => {%>
+                            <img src="/uploads/<%= j %>">
+                            <%}) %>
+                        </div>
+                    </a>
+                    <div class="prod-box-text">
+                        <h6> <span>ID :</span>AC <%= i.code %> </h6>
+                        <a href="/shop-single/<%= i.id %>">
+                            <h5><%= i.titleRu %> </h5>
+                        </a>
+                    </div>
+                    <div class="prod-box-button">
+                        <a href="/shop-single/<%= i.id %>">Более </a>
+                        <% if(i.salePrice) { %>
+                            <div class="saleBox">
+                            <h6><del><%= i.price %> &#1423</del></h6>
+                            <h4><%= i.salePrice %> &#1423</h4>
+                           </div>
+                            <% } else { %>
+                            <h4><%= i.price %> &#1423</h4>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <%}) %>
+            <%} %>
+
+            <!-- hit hy -->
+            <% if(locale === 'hy') {%>
+            <% hit.forEach(i => {%>
+            <div class="item">
+                <div class="prod-box">
+                    <a href="/shop-single/<%= i.id %>">
+                        <div class="item_img item-img-h">
+                            <% i.avatar.forEach(j => {%>
+                            <img src="/uploads/<%= j %>">
+                            <%}) %>
+                        </div>
+                    </a>
+                    <div class="prod-box-text">
+                        <h6> <span>ID :</span>AC <%= i.code %> </h6>
+                         <!-- available start -->
+                         <div class="single-product-available-single">
+                            <% if(i.available) { %>
+                            <h5 class="notAvailableHit">
+                                   
+                                <% if(locale === 'en') {%>      
+                                    Not available temporarily
+                                <%} %>
+            
+                                <% if(locale === 'ru') {%>      
+                                    временно недоступен
+                                <%} %>
+            
+                                <% if(locale === 'hy') {%>      
+                                    Ժամանակավորապես առկա չէ
+                                <%} %>
+                            </h5>
+                        <% } else { %>
+                            <h5 class="availableHit">
+                                <% if(locale === 'en') {%>      
+                                    is available
+                                <%} %>
+            
+                                <% if(locale === 'ru') {%>      
+                                    доступен
+                                <%} %>
+            
+                                <% if(locale === 'hy') {%>      
+                                    առկա է
+                                <%} %>
+                                </h5>
+                        <% } %>
+                        </div>
+                        <!-- available  end -->
+                        <a href="/shop-single/<%= i.id %>">
+                            <h5><%= i.titleHy %> </h5>
+                        </a>
+                    </div>
+                    <div class="prod-box-button">
+                        <a href="/shop-single/<%= i.id %>">Դիտել ավելին</a>
+                        <% if(i.salePrice) { %>
+                            <div class="saleBox">
+                            <h6><del><%= i.price %> &#1423</del></h6>
+                            <h4><%= i.salePrice %> &#1423</h4>
+                           </div>
+                            <% } else { %>
+                            <h4><%= i.price %> &#1423</h4>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <%}) %>
+            <%} %>
+
+        </div>
+    </div>
+</div>
+
+<!-- Хиты продаж END -->
+
+
+<!-- Распродажа START -->
+<div class="section-block-grey">
+    <div class="container">
+
+        <div class="section-heading center-holder">
+            <span><%= __('sales.howWork') %></span>
+            <h2><%= __('sales.sale') %></h2>
+            <div class="section-heading-line"></div>
+        </div>
+
+        <div class="row mt-50">
+            <!-- en -->
+            <% if(locale === 'en') {%>
+            <% sale.forEach(i=> {%>
+            <div class="col-lg-3 col-md-6 col-12">
+                <% if(i.news) {%>
+                <div class="sale-box">
+                    <span>New</span>
+                </div>
+                <%} %>
+                <% if(i.discountEn) {%>
+                <div class="sale-box">
+                    <span><%= i.discountEn %></span>
+                </div>
+                <%} %>
+                <div class="all-prod-box">
+                    <div class="heart-box">
+                        <div class="item wishItem">
+                            <a class="wishAction addToWish" data-img="uploads/<%= i.avatar[0] %>"
+                                data-title="<%= i.titleEn %>" data-id="<%= i.id %>" data-code="<%= i.code %>" href="#">
+                                <i class="icon-line-awesome-heart-o"></i>
+                            </a>
+                            <% if(i.discountEn) {%>
+                            <input type="hidden" name="price" value="<%= i.discountEn %>"
+                                data-price="<%= i.discountEn %>">
+                            <%} else {%>
+                            <input type="hidden" name="price" value="<%= i.price %>" data-price="<%= i.price %>">
+                            <%} %>
+
+                            <input type="hidden" name="code" value="<%= i.code %>" data-code="<%= i.code %>">
+                        </div>
+                    </div>
+                    <a href="/shop-single/<%= i.id %>">
+                        <div class="all-prod-box-img">
+                            <div class="item_img all-prod-box-img-h">
+                                <% i.avatar.forEach(j => {%>
+                                <img src="/uploads/<%= j %>">
+                                <%}) %>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="all-prod-box-info">
+                        <h6> <span>ID :</span>AC <%= i.code %></h6>
+                         <!-- available start -->
+                         <div class="single-product-available-single">
+                            <% if(i.available) { %>
+                               <h5 class="notAvailableHit">temporarily unavailable</h5>
+                           <% } else { %>
+                               <h5 class="availableHit">available</h5>
+                           <% } %>
+                           </div>
+                       <!-- available  end -->
+                        <a href="/shop-single/<%= i.id %>">
+                            <h5><%= i.titleEn %></h5>
+                        </a>
+                        <div class="all-prod-box-info-color">
+                            <h5 class="mb-3">Color:</h5>
+                            <% i.color.forEach(l => {%>
+                            <div class="all-prod-box-color" style="background: <%= l %>;"></div>
+                            <%}) %>
+
+                        </div>
+                        <div class="all-prod-box-info-button">
+                            <a href="/shop-single/<%=i.id%>">More detailed </a>
+                            <% if(i.salePrice) { %>
+                                <div class="saleBox">
+                                <h6><del><%= i.price %> &#1423</del></h6>
+                                <h4><%= i.salePrice %> &#1423</h4>
+                               </div>
+                                <% } else { %>
+                                <h4><%= i.price %> &#1423</h4>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%}) %>
+            <%} %>
+
+            <!-- ru -->
+            <% if(locale === 'ru') {%>
+            <% sale.forEach(i=> {%>
+            <div class="col-lg-3 col-md-6 col-12">
+                <% if(i.news) {%>
+                <div class="sale-box">
+                    <span>Новый</span>
+                </div>
+                <%} %>
+                <% if(i.discountRu) {%>
+                <div class="sale-box">
+                    <span><%= i.discountRu %></span>
+                </div>
+                <%} %>
+                <div class="all-prod-box">
+                    <div class="heart-box">
+                        <a class="wishAction addToWish" data-img="uploads/<%= i.avatar[0] %>"
+                            data-title="<%= i.titleRu %>" data-id="<%= i.id %>" data-code="<%= i.code %>" href="#">
+                            <i class="icon-line-awesome-heart-o"></i>
+                        </a>
+                        <% if(i.discountRu) {%>
+                        <input type="hidden" name="price" value="<%= i.discountRu %>" data-price="<%= i.discountRu %>">
+                        <%} else {%>
+                        <input type="hidden" name="price" value="<%= i.price %>" data-price="<%= i.price %>">
+                        <%} %>
+                        <input type="hidden" name="code" value="<%= i.code %>" data-code="<%= i.code %>">
+                    </div>
+                    <a href="/shop-single/<%= i.id %>">
+                        <div class="all-prod-box-img">
+                            <div class="item_img all-prod-box-img-h">
+                                <% i.avatar.forEach(j => {%>
+                                <img src="/uploads/<%= j %>">
+                                <%}) %>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="all-prod-box-info">
+                        <h6> <span>ID :</span>AC <%= i.code %></h6>
+                         <!-- available start -->
+                         <div class="single-product-available-single">
+                            <% if(i.available) { %>
+                               <h5 class="notAvailable">временно недоступен</h5>
+                           <% } else { %>
+                               <h5 class="available">доступен</h5>
+                           <% } %>
+                           </div>
+                       <!-- available  end -->
+                        <a href="/shop-single/<%= i.id %>">
+                            <h5><%= i.titleRu %></h5>
+                        </a>
+                        <div class="all-prod-box-info-color">
+                            <h5 class="mb-3">Цвет:</h5>
+                            <% i.color.forEach(l => {%>
+                            <div class="all-prod-box-color" style="background: <%= l %>;"></div>
+                            <%}) %>
+                        </div>
+                        <div class="all-prod-box-info-button">
+                            <a href="/shop-single/<%=i.id%>">Более</a>
+                            <% if(i.salePrice) { %>
+                                <div class="saleBox">
+                                <h6><del><%= i.price %> &#1423</del></h6>
+                                <h4><%= i.salePrice %> &#1423</h4>
+                               </div>
+                                <% } else { %>
+                                <h4><%= i.price %> &#1423</h4>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%}) %>
+            <%} %>
+
+            <!-- hy -->
+            <% if(locale === 'hy') {%>
+            <% sale.forEach(i=> {%>
+            <div class="col-lg-3 col-md-6 col-12">
+                <% if(i.news) {%>
+                <div class="sale-box">
+                    <span>Նոր</span>
+                </div>
+                <%} %>
+                <% if(i.discountHy) {%>
+                <div class="sale-box">
+                    <span><%= i.discountHy %></span>
+                </div>
+                <%} %>
+                <div class="all-prod-box">
+                    <div class="heart-box">
+                        <div class="item wishItem">
+                            <a class="wishAction addToWish" data-img="uploads/<%= i.avatar[0] %>"
+                                data-title="<%= i.titleHy %>" data-id="<%= i.id %>" data-code="<%= i.code %>" href="#">
+                                <i class="icon-line-awesome-heart-o"></i>
+                            </a>
+                            <% if(i.discountHy) {%>
+                            <input type="hidden" name="price" value="<%= i.discountHy %>"
+                                data-price="<%= i.discountHy %>">
+                            <%} else {%>
+                            <input type="hidden" name="price" value="<%= i.price %>" data-price="<%= i.price %>">
+                            <%} %>
+                            <input type="hidden" name="code" value="<%= i.code %>" data-code="<%= i.code %>">
+                        </div>
+                    </div>
+                    <a style="background: green" href="/shop-single/<%= i.id %>">
+                        <div class="all-prod-box-img">
+                            <div class="item_img all-prod-box-img-h">
+                                <% i.avatar.forEach(j => {%>
+                                <img src="/uploads/<%= j %>">
+                                <%}) %>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="all-prod-box-info">
+                        <h6> <span>ID :</span>AC <%= i.code %></h6>
+                         <!-- available start -->
+                         <div class="single-product-available-single">
+                         <% if(i.available) { %>
+                            <h5 class="notAvailable">
+                                   
+                                <% if(locale === 'en') {%>      
+                                    Not available temporarily
+                                <%} %>
+            
+                                <% if(locale === 'ru') {%>      
+                                    временно недоступен
+                                <%} %>
+            
+                                <% if(locale === 'hy') {%>      
+                                    Ժամանակավորապես առկա չէ
+                                <%} %>
+                            </h5>
+                        <% } else { %>
+                            <h5 class="available">
+                                <% if(locale === 'en') {%>      
+                                    is available
+                                <%} %>
+            
+                                <% if(locale === 'ru') {%>      
+                                    доступен
+                                <%} %>
+            
+                                <% if(locale === 'hy') {%>      
+                                    առկա է
+                                <%} %>
+                                </h5>
+                        <% } %>
+                        </div>
+                        <!-- available  end -->
+                        <a href="/shop-single/<%= i.id %>">
+                            <h5><%= i.titleHy %></h5>
+                        </a>
+                        <div class="all-prod-box-info-color">
+                            <h5 class="mb-3">Գույն:</h5>
+                            <% i.color.forEach(l => {%>
+                            <div class="all-prod-box-color" style="background: <%= l %>;"></div>
+                            <%}) %>
+                        </div>
+                        <div class="all-prod-box-info-button">
+                            <a href="/shop-single/<%=i.id%>">Դիտել ավելին</a>
+                            <% if(i.salePrice) { %>
+                                <div class="saleBox">
+                                <h6><del><%= i.price %> &#1423</del></h6>
+                                <h4><%= i.salePrice %> &#1423</h4>
+                               </div>
+                                <% } else { %>
+                                <h4><%= i.price %> &#1423</h4>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%}) %>
+            <%} %>
+
+        </div>
+
+        <div class="box-button-all">
+            <a href="/all-category/1"><%= __('buttons.viewAll') %></a>
+        </div>
+    </div>
+</div>
+
+<!-- Распродажа END -->
+
+
+<!-- Background Section START -->
+<div class="section-block-bg" style="background-image: url(img/bg/gallery-4.jpg);">
+    <div class="container">
+        <div class="section-heading center-holder white-color">
+            <span><%= __('section.1') %></span>
+            <h2><strong><%= __('section.2') %></strong></h2>
+            <h4><%= __('section.3') %></h4>
+            <!-- <a href="#" class="primary-button button-md mt-10">Become a Client</a> -->
+        </div>
+    </div>
+</div>
+<!-- Background Section END -->
+
+
+<!-- Cases START -->
+<div class="section-block-grey border-top">
+    <div class="container">
+        <div class="section-heading">
+            <h5><%= __('advantage') %></h5>
+            <div class="section-heading-line-left"></div>
+        </div>
+        <div class="row mt-40">
+            <!-- Project Block Start -->
+            <% if(locale == "hy") {%>
+            <% advantage.forEach(item => {%>
+            <div class="col-md-6 col-sm-12 col-12">
+                <div class="case-block">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-6 pr-0">
+                            <div class="case-block-img" style="background-image: url(uploads/<%= item.avatar %>); ">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-6">
+                            <div class="case-block-inner">
+                                <h4><%= item.titleHy %></h4>
+                                <p><%= item.descriptionHy %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%}) %>
+            <%} %>
+            <% if(locale == "ru") {%>
+            <% advantage.forEach(item => {%>
+            <div class="col-md-6 col-sm-12 col-12">
+                <div class="case-block">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-6 pr-0">
+                            <div class="case-block-img" style="background-image: url(uploads/<%= item.avatar %>)">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-6">
+                            <div class="case-block-inner">
+                                <h4><%= item.titleRu %></h4>
+                                <p><%= item.descriptionRu %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%}) %>
+            <%} %>
+            <% if(locale == "en") {%>
+            <% advantage.forEach(item => {%>
+            <div class="col-md-6 col-sm-12 col-12">
+                <div class="case-block">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-6 pr-0">
+                            <div class="case-block-img" style="background-image: url(uploads/<%= item.avatar %>); ">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-6">
+                            <div class="case-block-inner">
+                                <h4><%= item.titleEn %></h4>
+                                <p><%= item.descriptionEn %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%}) %>
+            <%} %>
+            <!-- Project Block End -->
+        </div>
+    </div>
+</div>
+<!-- Cases END -->
+
+
+<!-- Notice Section START -->
+<div class="notice-section notice-section-sm border-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-8 col-12">
+                <div class="mt-5">
+                    <h6><%= __('contacts.find') %></h6>
+                    <div class="section-heading-line-left"></div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-12">
+                <div class="mt-10 right-holder-md">
+                    <a href="contact" class="primary-button button-sm mt-15-xs"><%= __('contacts.come') %></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Notice Section END -->
+
+<%- include('layouts/footer') %>

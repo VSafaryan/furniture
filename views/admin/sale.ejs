@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title><%= title %></title>
+
+    <!-- Bootstrap core CSS-->
+    <link href="/admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+     <!-- FontAwesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Custom fonts for this template-->
+    <link href="/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="/admin/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="/admin/css/sb-admin.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+    <a class="navbar-brand mr-1" href="/admin-index">Admin Panel</a>
+
+    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Navbar Search -->
+    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for..." aria-label="Search"
+                   aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Navbar -->
+    <ul class="navbar-nav ml-auto ml-md-0">
+        <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user-circle fa-fw"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">Settings</a>
+                <a class="dropdown-item" href="#">Activity Log</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/login/logout" data-toggle="modal"
+                   data-target="#logoutModal">Logout</a>
+            </div>
+        </li>
+    </ul>
+
+</nav>
+
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="sidebar navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/admin-users">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Օգտատերեր</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/admin-settings">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Կարգավորումներ</span>
+            </a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/admin-sale">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Ապրանքներ</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/admin-orders">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Գնումներ</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/admin-message">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>նամակներ</span>
+            </a>
+        </li>
+    </ul>
+
+    <div id="content-wrapper">
+
+        <div class="container-fluid">
+
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">Վահանակ</a>
+                </li>
+                <li class="breadcrumb-item active">Ապրանքներ</li>
+            </ol>
+
+            <!-- DataTables Example -->
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fas fa-table"></i>
+                    Ապրանքների տվյալներ
+                    <button type="button" class="btn btn-small btn-primary" data-toggle="modal"
+                            data-target="#myModal" style="margin: 0px 5px;">Ավելացնել ապրանք
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th style="width: 5%">Նկարներ</th>
+                                <th style="width: 3%">ID</th>
+                                <th style="width: 5%">Վերնագիր</th>
+                                <th style="width: 3%">Գին</th>
+                                <th style="width: 2%">Տեղեկատվություն</th>
+                                <th style="width: 3%">Կատեգորիա</th>
+                                <th style="width: 2%">Նկարագրություն</th>
+                                <th style="width: 5%">Լրացուցիչ տեղեկություններ</th>
+                                <th style="width: 3%">Փոփոխել</th>
+                                <th style="width: 3%">Ջնջել</th>
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <tr>
+                                <th style="width: 5%">ID</th>
+                                <th style="width: 3%">Նկարներ</th>
+                                <th style="width: 5%">Վերնագիր</th>
+                                <th style="width: 3%">Գին</th>
+                                <th style="width: 2%">Տեղեկատվություն</th>
+                                <th style="width: 3%">Կատեգորիա</th>
+                                <th style="width: 2%">Նկարագրություն</th>
+                                <th style="width: 5%">Լրացուցիչ տեղեկություններ</th>
+                                <th style="width: 3%">Փոփոխել</th>
+                                <th style="width: 3%">Ջնջել</th>
+                            </tr>
+                            </tfoot>
+                            <tbody>
+                            <% sale.forEach(item => { %>
+                                <tr>
+                                    <td>
+                                        <% item.avatar.forEach(i => { %>
+                                            <div>
+                                                <form action="/admin-sale/edit-image" method="POST">
+                                                    <button type="submit">
+                                                        <img src="/uploads/<%= i %>" class="saleImg" name="img">
+                                                        <input type="hidden" name="encoded_img" value="<%= i %>">
+                                                    </button>
+                                                    <input type="hidden" name="id" value="<%= item.id %>">
+                                                </form>
+                                            </div>
+                                        <% }) %>
+
+                                    </td>
+                                    <td>AC <%= item.code %></td>
+                                    <td><%= item.titleHy %></td>
+                                    <td><%= item.price %></td>
+                                    <td class="parseText"><%= item.infoHy %>
+                                    <div class="doc"></div>
+                                    </td>
+                                    <td><%= item.categoryHy %></td>
+                                    <td>
+                                        <div><%= item.sizeHy %></div>
+                                        <div><%= item.weightHy %></div>
+                                        <div><%= item.materialHy %></div>
+                                        <div>
+                                            <% item.color.forEach(j => { %>
+                                                <div class="all-prod-box-color" style="background: <%= j %>;"></div>
+                                            <% }) %>
+                                        </div>
+                                    </td>
+                                    <td><%= item.more_infoHy %></td>
+                                    <td>
+                                        <a href="/admin-sale/<%= item.id %>/edit?allow=true"
+                                           class="btn btn-success">Փոփոխել</a>
+                                    </td>
+                                    <td>
+                                        <form action="/admin-sale/delete" method="POST">
+                                            <input type="hidden" name="id" value="<%= item.id %>">
+                                            <button class="btn btn-danger">Ջնջել</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- /.content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Չեղարկել</button>
+                <a class="btn btn-primary" href="/register/logout">Դուրս գալ</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <form class="modal-content" action="/admin-sale/create" method="POST"
+              accept="image/x-png,image/gif,image/jpeg" enctype="multipart/form-data">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <!-- <h4 class="modal-title">Modal Header</h4> -->
+            </div>
+            <div class="modal-body">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#hy">HY</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#ru">RU</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#en">EN</a>
+                    </li>
+                </ul>
+                <div class="container mt-5">
+                    <label>Image</label>
+                    <div>Կարող եք ավելացնել մի քանի նկար</div>  
+                    <br />             
+                    <input type="file" name="avatar" multiple>
+                    <hr />
+                    <input type="file" name="avatar" multiple>
+                    <hr />
+                    <input type="file" name="avatar" multiple>
+                    <hr />
+                    <input type="file" name="avatar" multiple>
+                    <hr />
+                    <div class="form-group">
+                        <label for="">Code</label>
+                        <input type="text" class="form-control" name="code">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Գին</label>
+                        <input type="text" class="form-control" name="price">
+                    </div>
+                    <div class="form-group">
+                        <label for="">զեղչված Գին</label>
+                        <input type="text" class="form-control" name="salePrice">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Hit</label>
+                        <input type="checkbox" name="hit" value="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="">New</label>
+                        <input type="checkbox" name="news" value="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">առկա չէ</label>
+                        <input type="checkbox" name="available" value="1">
+                    </div>
+                    <div class="form-group">
+                        <div class="colors">
+                            <p><b>Select a colors</b></p>
+                            <% color.forEach(i => { %>
+                                <div class="all-prod-box-color" style="background: <%= i.color %>">
+                                    <div class="d-flex">
+                                        <input type="checkbox" name="color" value="<%= i.color %>">
+                                    </div>
+                                </div>
+                            <% }) %>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content">
+
+                    <!-- HY -->
+                    <div id="hy" class="container tab-pane active"><br>
+                        <div class="form-group">
+                            <label for="">Վերնագիր</label>
+                            <input type="text" class="form-control" name="titleHy">
+                        </div>
+                        <div class="form-group">
+                            <label for="">պատրաստման տվյալներ օրինակ՝(Պատվիրելու դեպքում պատրաստ կլինի 10 - 12օրում)</label>
+                            <input type="text" class="form-control" name="readyHy">
+                        </div>
+                        <div class="form-group descHy">
+                            <label for="">Տեղեկատվություն</label>
+                            <!-- <textarea name="infoHy" class="form-control"></textarea> -->
+                            <textarea name="infoHy" id="editor">
+                               
+                            </textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Կատեգորիա</label>
+                            <select name="categoryHy" id="" class="form-control">
+                                <% category.forEach(i => { %>
+                                    <option value="<%= i.categoryHy %>"><%= i.categoryHy %></option>
+                                <% }) %>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Լրացուցիչ տեղեկություններ</label>
+                            <textarea name="more_infoHy" class="form-control"></textarea>
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <p><b>Նկարագրություն</b></p>
+                            <div class="form-group">
+                                <label for="">Չափ</label>
+                                <input type="text" class="form-control" name="sizeHy">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Քաշը</label>
+                                <input type="text" class="form-control" name="weightHy">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Մատերիալ</label>
+                                <input type="text" class="form-control" name="materialHy">
+                            </div>
+                            <!-- <div class="form-group">
+                                <label for="">Գույնը</label>
+                                <input type="text" class="form-control" name="colorHy">
+                            </div> -->
+                        </div>
+                        <hr>
+
+                        <div class="form-group">
+                            <label for="">Զեղչ (%)</label>
+                            <input type="text" class="form-control" name="discountHy">
+                        </div>
+                    </div>
+                    <!-- RU -->
+                    <div id="ru" class="container tab-pane fade"><br>
+                        <div class="form-group">
+                            <label for="">Заглавие</label>
+                            <input type="text" class="form-control" name="titleRu">
+                        </div>
+                        <div class="form-group">
+                            <label for="">պատրաստման տվյալներ օրինակ՝(При заказе будет готов через 10-12 дней)</label>
+                            <input type="text" class="form-control" name="readyRu">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Информация</label>
+                            <!-- <textarea name="infoRu" class="form-control"></textarea> -->
+                            <textarea name="infoRu" id="editorRu">
+                               
+                            </textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Категория</label>
+                            <select name="categoryRu" id="" class="form-control">
+                                <% category.forEach(i => { %>
+                                    <option value="<%= i.categoryRu %>"><%= i.categoryRu %></option>
+                                <% }) %>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Дополнительная информация</label>
+                            <textarea name="more_infoRu" class="form-control"></textarea>
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <p><b>Особенности</b></p>
+                            <div class="form-group">
+                                <label for="">Размер</label>
+                                <input type="text" class="form-control" name="sizeRu">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Вес</label>
+                                <input type="text" class="form-control" name="weightRu">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Материал</label>
+                                <input type="text" class="form-control" name="materialRu">
+                            </div>
+                            <!-- <div class="form-group">
+                                <label for="">Цвет</label>
+                                <input type="text" class="form-control" name="colorRu">
+                            </div> -->
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <label for="">Скидка (%)</label>
+                            <input type="text" class="form-control" name="discountRu">
+                        </div>
+                    </div>
+                    <!-- EN -->
+                    <div id="en" class="container tab-pane fade"><br>
+                        <div class="form-group">
+                            <label for="">Title</label>
+                            <input type="text" class="form-control" name="titleEn">
+                        </div>
+                        <div class="form-group">
+                            <label for="">պատրաստման տվյալներ օրինակ՝(Will be ready in 10-12 days if ordered)</label>
+                            <input type="text" class="form-control" name="readyEn">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Information</label>
+                            <!-- <textarea name="infoEn" class="form-control"></textarea> -->
+                            <textarea name="infoEn" id="editorEn">
+                               
+                            </textarea>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="">Category</label>
+                            <select name="categoryEn" id="" class="form-control">
+                                <% category.forEach(i => { %>
+                                    <option value="<%= i.categoryEn %>"><%= i.categoryEn %></option>
+                                <% }) %>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Additional information</label>
+                            <textarea name="more_infoEn" class="form-control"></textarea>
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <p><b>Features</b></p>
+                            <div class="form-group">
+                                <label for="">Size</label>
+                                <input type="text" class="form-control" name="sizeEn">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Weight</label>
+                                <input type="text" class="form-control" name="weightEn">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Material</label>
+                                <input type="text" class="form-control" name="materialEn">
+                            </div>
+                            <!-- <div class="form-group">
+                                <label for="">Color</label>
+                                <input type="text" class="form-control" name="colorEn">
+                            </div> -->
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <label for="">Discount (%)</label>
+                            <input type="text" class="form-control" name="discountEn">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+        </form>
+
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript-->
+<script src="/admin/vendor/jquery/jquery.min.js"></script>
+<script src="/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- editor plugin -->
+<script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+
+        ClassicEditor
+        .create( document.querySelector( '#editorRu' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+
+
+        ClassicEditor
+        .create( document.querySelector( '#editorEn' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+
+</script>
+
+<script>
+    let str = '<div><h1>hello world</h1></div>'
+    var parser = new DOMParser();
+    var mylist = document.getElementById('string');
+    mylist.insertAdjacentHTML('beforeend', str);
+
+</script>
+
+<!-- Core plugin JavaScript-->
+<script src="/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Page level plugin JavaScript-->
+<script src="/admin/vendor/datatables/jquery.dataTables.js"></script>
+<script src="/admin/vendor/datatables/dataTables.bootstrap4.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="/admin/js/sb-admin.min.js"></script>
+
+<!-- Demo scripts for this page-->
+<script src="/admin/js/demo/datatables-demo.js"></script>
+
+<script src="/admin//js/script.js" type="text/javascript"></script>
+</body>
+
+</html>

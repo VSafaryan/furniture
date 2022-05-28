@@ -1,0 +1,52 @@
+<%- include('layouts/header') %>
+
+<!-- approvedPage start -->
+
+<div class="container">
+   <div class="row">
+      <div class="col-md-6 mx-auto mt-5">
+         <div class="payment">
+            <div class="payment_header">
+               <div class="check"><i style="color: green" class="fa fa-check" aria-hidden="true"></i></div>
+            </div>
+            <div class="content">
+               <h1>
+                  <% if(locale === 'en') {%>      
+                    The letter was sent successfully 
+                 <%} %>
+
+                 <% if(locale === 'ru') {%>      
+                    Письмо успешно отправлено 
+                 <%} %>
+
+                 <% if(locale === 'hy') {%>      
+                     Նամակը հաջողությամբ ուղարկված է 
+                 <%} %>
+                 <i style="color: green;" class="fa-solid fa-thumbs-up"></i>
+               </h1>
+              <br>
+               <a href="/">
+                  <% if(locale === 'en') {%>      
+                     Go to Home
+                 <%} %>
+
+                 <% if(locale === 'ru') {%>      
+                  вернуться
+                 <%} %>
+
+                 <% if(locale === 'hy') {%>      
+                     Վերադառնալ
+                 <%} %>
+               </a>
+            </div>
+            
+         </div>
+      </div>
+   </div>
+</div>
+
+
+<!-- approvedPage end -->
+
+
+<%- include('layouts/footer') %>

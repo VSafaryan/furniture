@@ -1,0 +1,43 @@
+<%- include('layouts/header') %>
+
+<!-- Register-box START -->
+<div class="section-block-grey border-top">
+    <div class="container">
+        <div class="section-heading">
+            <h5><%= __('links.personal') %></h5>
+            <div class="section-heading-line-left"></div>
+        </div>
+        <div class="row mt-40">
+
+            <div class="col-lg-8 col-md-7 col-12 mb-30">
+                <div class="personal-info-box">
+                    <ul>
+                        <li><b><%= __('shoping_cart.cash.name') %>:</b>&nbsp;<%= user.name %></li>
+                        <li><b><%= __('shoping_cart.cash.surname') %>:</b>&nbsp;<%= user.surname %></li>
+                        <li><b><%= __('info.email') %>:</b>&nbsp;<%= user.email %></li>
+                        <li><b><%= __('shoping_cart.cash.phone') %>:</b>&nbsp;<%= user.phone %></li>
+                        <!-- <li>Password - <span>******</span></li> -->
+                    </ul>
+                    <!-- <a href="/register" class="primary-button-cub button-md mt-20">Изменить</a> -->
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-5 col-12">
+                <div class="register-box-menu">
+                    <ul>
+                        <li><a href="/login"> <%= __('info.login') %> </a></li>
+                        <li><a href="/register"> <%= __('info.register') %> </a></li>
+                        <li><a href="/change-password"> <%= __('info.forgot') %> </a></li>
+                        <li class="register-box-menu-active"><a href="/personal"> <%= __('info.myInfo') %> </a></li>
+                        <li><a href="/orders"> <%= __('info.orders') %> </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Register-box End -->
+
+
+<%- include('layouts/footer') %>

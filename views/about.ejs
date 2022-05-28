@@ -1,0 +1,103 @@
+<%- include('layouts/header') %>
+
+<!-- Page Title START -->
+<div class="page-title-section" style="background-image: url(img/bg/header-bg-4.jpg">
+    <div class="container">
+        <h1>
+            <% if(locale === 'en') {%>      
+                About Us
+            <%} %>
+
+            <% if(locale === 'ru') {%>      
+                о нас
+            <%} %>
+
+            <% if(locale === 'hy') {%>      
+                Մեր մասին
+            <%} %>
+        </h1>
+        <ul>
+            <li><a href="/"><%= __('links.home') %></a></li>
+            <li><a href=""><%= __('links.about') %></a></li>
+        </ul>
+    </div>
+</div>
+<!-- Page Title END -->
+
+<!-- Info & Feature Section START -->
+<div class="section-block mt-90 mb-90">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <img src="uploads/<%= about[0].avatar %>" class="about-img rounded-border shadow-primary" alt="img">
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="pl-30-md">
+                    <div class="section-heading">
+                        <h4><%= about[0].title %></h4>
+                    </div>
+                    <div class="section-heading-line-left"></div>
+                    <div class="text-content-big mt-20">
+                        <p><%= about[0].info %></p>
+                    </div>
+                    <div class="mt-35">
+                        <a href="/contact" class="primary-button button-sm mb-15-xs"><%= __('buttons.contactUs') %></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Info & Feature Section END -->
+
+
+
+<!-- Video Section START -->
+<div class="video-section">
+    <div class="video-area" id="video-area">
+        <div class="player" id="video-play"
+            data-property="{videoURL:'https://www.youtube.com/watch?v=33OYP8qoxA0', containment:'#video-area', showControls:false, autoPlay:true, 	zoom:0, loop:true, mute:true, startAt:1, opacity:1, quality:'low',}">
+        </div>
+        <div class="video-overlay">
+            <div class="video-content">
+                <div class="section-heading center-holder white-color">
+                    <span>
+                        <% if(locale === 'en') {%>      
+                            Gain a Success With Us!
+                        <%} %>
+    
+                        <% if(locale === 'ru') {%>      
+                            Добейтесь успеха с нами
+                        <%} %>
+    
+                        <% if(locale === 'hy') {%>      
+                            Հաջողություն ձեռք բերեք մեզ հետ
+                        <%} %>
+                        
+                    </span>
+                    <h2><strong>
+                        <% if(locale === 'en') {%>      
+                            Creative Consulting Agency
+                        <%} %>
+    
+                        <% if(locale === 'ru') {%>      
+                            Креативное консалтинговое агентство
+                        <%} %>
+    
+                        <% if(locale === 'hy') {%>      
+                            Հաջողություն ձեռք բերեք մեզ հետ
+                        <%} %>
+                       
+                    </strong></h2>
+                    <h4>For Smart Solutions.</h4>
+                    <a href="#" class="primary-button button-md mt-10">Become a Client</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Video Section END -->
+
+
+    <%- include('layouts/footer') %>

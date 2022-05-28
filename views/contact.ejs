@@ -1,0 +1,137 @@
+<%- include('layouts/header') %>
+
+<!-- Page Title START -->
+<div class="page-title-section" style="background-image: url(img/bg/header-bg-4.jpg">
+    <div class="container">
+        <h1><%= __('links.contact') %></h1>
+        <ul>
+            <li><a href="/"><%= __('links.home') %></a></li>
+            <li><a href=""><%= __('links.contact') %></a></li>
+        </ul>
+    </div>
+</div>
+<!-- Page Title END -->
+
+<!-- Contact Boxes START -->
+<div class="section-block-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="contact-box">
+                    <i class="fa fa-phone-square"></i>
+                    <h4><%= __('contactUs.call') %></h4>
+                    <span><%= contact[0].phone %></span>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="contact-box">
+                    <i class="fa fa-map"></i>
+                    <h4><%= __('contactUs.visit') %></h4>
+                    <span>Իսակովի Պողոտա Մայրաքաղաքային 152</span>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="contact-box">
+                    <i class="fa fa-envelope"></i>
+                    <h4><%= __('contactUs.mail') %></h4>
+                    <span><%= contact[0].email %></span>
+                </div>
+            </div>
+            
+        <!-- COMMENT        <div class="col-md-3 col-sm-6 col-12">
+               <div class="contact-box">
+                    <i class="fa fa-comments-o"></i>
+                    <h4><%= __('contactUs.chat') %></h4>
+                    <span>
+                        <% if (locale === 'hy') { %>
+                            մենք աշխատում ենք 24/7
+                        <% } %>
+                        <% if (locale === 'ru') { %>
+                            мы работаем 24/7
+                        <% } %>
+                        <% if (locale === 'en') { %>
+                            We work 24/7
+                        <% } %>
+                        </span>
+                </div>    -->
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact Boxes END -->
+
+
+<!-- Contact Form Section START -->
+<div class="section-block">
+    <div class="container">
+        <div class="section-heading center-holder">
+            <span><%= __('contactUs.text_1') %></span>
+            <h3><%= __('contactUs.text_2') %></h3>
+            <div class="section-heading-line"></div>
+        </div>
+        <div class="mt-50">
+            <div class="contact-form-box">
+                <!-- Form Start -->
+           
+                <!-- Form End -->
+            </div>
+
+
+            <div class="container">
+                <div class="row">
+                  <div class="col-12 mt-5">
+                    <form  class="form contact-form row">
+                  <div class="form-group col-md-6 col-sm-6 col-12">
+                      <input type="text"  id="nametwo" name="name" class="form-control" placeholder="<%= __('contactUs.input.name') %>">
+                      <small class="text-danger message"></small>
+                  </div>
+                  <div class="form-group col-md-6 col-sm-6 col-12">
+                      <input type="email" id="email"  name="email"  class="form-control" placeholder="<%= __('contactUs.input.email') %>">
+                      <small class="text-danger message"></small>
+                  </div>
+
+                  <div class="form-group col-md-6 col-sm-6 col-12">
+                    <input type="number" id="phone" name="phone" class="form-control" placeholder="<%= __('contactUs.input.phone') %>">
+                    <small class="text-danger message"></small>
+                  </div>
+                  <div class="form-group col-md-6 col-sm-6 col-12">
+                      <input type="text" id="theme" name="theme" class="form-control" placeholder="<%= __('contactUs.input.subject') %>">
+                      <small class="text-danger message"></small>
+                  </div>
+
+
+
+                  <div class="form-group col-md-12">
+                      <textarea name="messageContact" id="messageContact"  placeholder="<%= __('contactUs.input.message') %>" cols="30" rows="10" class="form-control"></textarea>
+                      <small class="text-danger message"></small>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="center-holder">
+                        <button class="btn" type="submit"><%= __('contactUs.input.send') %></button>
+                    </div>
+                </div>
+              </form>
+                  </div>
+                </div>
+              </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Contact Form Section END -->
+
+
+
+<!-- Map START -->
+<div class="mt-50">
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3847.311691743914!2d44.43159569341073!3d40.15870845181476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abe6478577e7b%3A0x3b751394030d2cb!2z0JDRgNCz0LDQstCw0L3QtCAwODA1LCDQkNGA0LzQtdC90LjRjw!5e1!3m2!1sru!2s!4v1571681849873!5m2!1sru!2s"
+        width="100%" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+</div>
+<!-- Map START -->
+
+<%- include('layouts/footer') %>
